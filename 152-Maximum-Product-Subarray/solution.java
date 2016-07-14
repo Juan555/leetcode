@@ -1,16 +1,12 @@
 public class Solution {
     public int maxProduct(int[] nums) {
-        if ( nums.length == 1 ){
-            return nums[0];
-        }
+        int preMax = nums[0];
+        int preMin = nums[0];
         int result = nums[0];
         for ( int i = 1; i < nums.length; ++i ){
-            if ( nums[i] >= 1 and result > 0 ){
-                result *= nums[i];
-            }
-            else if (nums[i] < 0 and result < 0 ){
-                result *= nums[i];
-            }
+            preMax = max ( max(preMax * nums[i], preMin * nums[i]), nums[i] );
+            preMin = min ( min(preMin * nums[i], preMin * nums[i]), nums[i] );
+            result = max ( preMax, result );
         }
         return result;
     }
