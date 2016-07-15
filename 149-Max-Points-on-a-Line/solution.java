@@ -73,7 +73,7 @@ public class Solution {
         b = Math.abs(b);
         c = a * first.x + b * first.y;
         }
-        return a + "," + b + "," + c;
+        return a + "," + b + "," + c;//this is the bug!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! return the number,not the string abc!
     }
     
     private static int find_gcd( int a, int b ) {
