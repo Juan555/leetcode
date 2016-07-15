@@ -3,11 +3,12 @@ public class Solution {
         String word = "";
         String result = "";
         for ( int i = 0; i < s.length(); ++i ) {
-            if ( s[i] == ' '){
+            char c = s.charAt(i);
+            if ( c == ' '){
                 result = word + " " + result;
             }
             else {
-                word += s[i];
+                word.append(c);
             }
         }
         return result;
