@@ -9,7 +9,7 @@ public class Solution {
         String word = "";
         String result = "";
         for ( int i = 0; i < s.length(); ++i ) {
-            result += c;
+            result += s[i];
         }
         return result;
     }
