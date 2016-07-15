@@ -73,7 +73,7 @@ public class Solution {
         b = Math.abs(b);
         c = a * first.x + b * first.y;
         }
-        return a + "|" + b + "|" + c;
+        return a + "," + b + "," + c;
     }
     
     private static int find_gcd( int a, int b ) {
