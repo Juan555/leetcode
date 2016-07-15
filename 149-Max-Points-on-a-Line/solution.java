@@ -50,7 +50,7 @@ public class Solution {
             int dx = p1.x - p2.x;
             int dy = p1.y - p2.y;
             /*reduce to simplest*/
-            int gcd = gcd(Math.abs(dx), Math.abs(dy));
+            int gcd = find_gcd(Math.abs(dx), Math.abs(dy));
             a = dy / gcd;
             b = dx / gcd;
             if (a * b < 0) { // force a to be negative
