@@ -14,7 +14,7 @@ public class Solution {
         }
         int result = 2; //at least two points in a line
         int max = 0;
-        Map<String, integer> map = new HashMap<String, integer>;
+        Map<String, Integer> map = new HashMap<String, Integer>();
         for ( int i = 0; i < points.length; ++i ){
             int same_num = 0;
             for ( int j = i + 1; j <points.length; ++j ){
