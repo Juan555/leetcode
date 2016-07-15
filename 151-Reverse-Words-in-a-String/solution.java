@@ -15,7 +15,7 @@ public class Solution {
                 word = "";
             }
             else {
-                word += c;
+                word = c;
             }
         }
         return result;
