@@ -45,7 +45,7 @@ public class Solution {
         return result;
     }
     
-    public String get_key(Point first, Point second) { //ax + by = c
+    private static String get_key(Point first, Point second) { //ax + by = c
         int a;
         int b;
         float c; //pay attention it's float
@@ -75,7 +75,7 @@ public class Solution {
         return "a" + "b" + "c";
     }
     
-    public int find_gcd( int a, int b ) {
+    private static int find_gcd( int a, int b ) {
         if ( b == 0 ){
             return a;
         }
