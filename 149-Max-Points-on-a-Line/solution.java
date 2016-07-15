@@ -22,7 +22,7 @@ public class Solution {
                     same_num++;
                 }
                 else{
-                key = get_key( points[i], points[j] );
+                String key = get_key( points[i], points[j] );
                 if ( map.containsKey(key) ) {
                     int count = map.getKey(key);
                     count++;
