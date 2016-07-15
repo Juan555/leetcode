@@ -9,14 +9,7 @@ public class Solution {
         String word = "";
         String result = "";
         for ( int i = 0; i < s.length(); ++i ) {
-            char c = s.charAt(i);
-            if ( c == ' '){
-                result = word + " " + result;
-                word = "";
-            }
-            else {
-                word = c;
-            }
+            result += c;
         }
         return result;
     }
