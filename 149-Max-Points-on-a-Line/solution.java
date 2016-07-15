@@ -24,7 +24,7 @@ public class Solution {
                 else{
                 String key = get_key( points[i], points[j] );
                 if ( map.containsKey(key) ) {
-                    int count = map.getKey(key);
+                    int count = map.get(key);
                     count++;
                     map.put(key, count);
                     if (count > max){
