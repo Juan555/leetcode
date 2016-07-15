@@ -4,9 +4,12 @@ public class Solution {
         s = s.trim();
         String[] words = s.split(" ");
         String result = "";
-        for ( int i = 0; i < words.length(); ++i ) {
-            result = words[i] + " " + result;
+        for ( int i = 0; i < words.length; ++i ) {
+            if (!words[i].equals("")){
+                 result = words[i] + " " + result;
+            }
         }
+        result = result.trim();
         return result;
     }
 }
