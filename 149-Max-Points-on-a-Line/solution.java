@@ -18,7 +18,7 @@ public class Solution {
             for (int j = i + 1; j < points.length; j++) {
                 if (points[i].x == points[j].x && points[i].y == points[j].y ) countSame++; // same point
                 else {
-                    String key = normalize(points[i], points[j]); // a|b|c
+                    String key = get_key(points[i], points[j]); // a|b|c
                     if (map.containsKey(key)) { // on the line
                         int count = map.get(key) + 1;
                         map.put(key, count); // update count
@@ -34,14 +34,8 @@ public class Solution {
         }
         return res;
     }
-
-    /**
-     * use ax + by = c to represent a line and a|b|c as a key for that line
-     * a, b, c should be normalized, how?
-     *
-     * special case, vertical, horizontal
-     */
-    private static String normalize(Point p1, Point p2) {
+    
+    private static String get_key(Point p1, Point p2) { //ax + by = c
         int a, b;
         float c;
         if (p1.x == p2.x) { // vertical
@@ -71,11 +65,11 @@ public class Solution {
         return a + "|" + b + "|" + c; // key format
     }
 
-    /**
-     * recursively calculate the greateset common divisor of two numbers
-     */
-    private static int gcd(int a, int b) {
-        if (b == 0) return a; // stop when b == 0, a is the gcd
-        return gcd(b, a % b); // a <- b, b <- a % b
+    
+    private static int find_gcd( int a, int b ) {
+        if ( b == 0 ){
+            return a;
+        }
+        return find_gcd ( b, a % b );
     }
 }
