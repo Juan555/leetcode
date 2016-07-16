@@ -18,8 +18,8 @@ public class Solution {
     
     public int max_helper(TreeNode curr, int a, int max) {
         if (curr == null) return 0;
-        int left = maxDepth(curr.left, a, max);
-        int right = maxDepth(curr.right, a, max);
+        int left = max_helper(curr.left, a, max);
+        int right = max_helper(curr.right, a, max);
         return Math.max(left, right) + 1;
     }
 }
