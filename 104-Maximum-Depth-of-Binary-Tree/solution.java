@@ -16,8 +16,13 @@ public class Solution {
         return max;
     }
     
-    public void max_helper(TreeNode curr, int a, int[]result) {
-        return a;
-        
+    public void max_helper(TreeNode curr, int a, int max) {
+        if ( curr == null ) {
+            if ( a > max ) {
+                max = a;
+            }
+        }
+        max_helper ( curr->left, a + 1, max );
+        max_helper ( curr->right, a + 1, max );
     }
 }
