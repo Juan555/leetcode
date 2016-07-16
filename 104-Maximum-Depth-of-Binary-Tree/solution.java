@@ -14,5 +14,5 @@ public class Solution {
         }
         int left = maxDepth(root->left);
         int right = mexDepth(root->right);
-        return Math.max ( left, right );
+        return Math.max ( left, right ) + 1;
 }
