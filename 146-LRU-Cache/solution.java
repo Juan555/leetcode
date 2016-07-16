@@ -1,7 +1,7 @@
 public class LRUCache {
     ListNode head = new ListNode();
     ListNode tail = head;
-    Map<Integer, ListNode> map = new Hashmap<>;
+    Map<Integer, ListNode> map = new Hashmap<>();
     int capa;
     
     public class ListNode{ //how to create a ListNode
