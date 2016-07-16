@@ -16,7 +16,7 @@ public class Solution {
         return max;
     }
     
-    public void max_helper(TreeNode curr, int a, int[]result]) {
+    public void max_helper(TreeNode curr, int a, int[]result) {
         if ( curr == null ) {
             if ( a > result[0]){
                 result[0] = a;
