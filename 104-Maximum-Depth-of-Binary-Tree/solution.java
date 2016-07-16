@@ -17,9 +17,11 @@ public class Solution {
     }
     
     public int max_helper(TreeNode curr, int a, int max) {
-        if (curr == null) return 0;
-        int left = max_helper(curr.left, a, max);
-        int right = max_helper(curr.right, a, max);
-        return Math.max(left, right) + 1;
+        if ( curr == null ) {
+            return 0;
+        }
+        int left = max_helper ( curr->left, a + 1, max );
+        int right = max_helper ( curr->right, a + 1, max );
+        return left + right;
     }
 }
