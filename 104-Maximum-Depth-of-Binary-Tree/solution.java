@@ -12,17 +12,16 @@ public class Solution {
         int max = 0;
         int[] result = new int[1];
         result[0] = 0;
-        max_helper(root, 0, max);
+        max=max_helper(root, 0, max);
         return max;
     }
     
-    public void max_helper(TreeNode curr, int a, int max) {
+    public int max_helper(TreeNode curr, int a, int max) {
         if ( curr == null ) {
-            if ( a > max ) {
-                max = a;
-            }
+            return 0;
         }
-        max_helper ( curr->left, a + 1, max );
-        max_helper ( curr->right, a + 1, max );
+        int left = max_helper ( curr->left, a + 1, max );
+        int right = max_helper ( curr->right, a + 1, max );
+        return left + right;
     }
 }
