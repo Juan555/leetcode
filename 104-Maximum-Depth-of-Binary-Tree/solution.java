@@ -10,18 +10,20 @@
 public class Solution {
     public int maxDepth(TreeNode root) {
         int max = 0;
-        max_helper(root, 0, max);
+        int[] result = new int[1];
+        result[0] = 0;
+        max_helper(root, 0, result);
         return max;
     }
     
-    public void max_helper(TreeNode curr, int a, int max) {
+    public void max_helper(TreeNode curr, int a, int[]result]) {
         if ( curr == null ) {
-            if ( a > max ){
-                max = a;
+            if ( a > result[0]){
+                result[0] = a;
             }
             return;
         }
-        max_helper ( curr->left, a + 1, max );
-        max_helper ( curr->right, a + 1, max );
+        max_helper ( curr->left, a + 1, result );
+        max_helper ( curr->right, a + 1, result );
     }
 }
