@@ -14,7 +14,7 @@ public class LRUCache {
             node_key = a;
             val = b;
         }
-        ListNode(); //ListNode constructor
+        ListNode(){} //ListNode constructor, has bug missing{}
     }
     
     public LRUCache(int capacity) {
@@ -22,6 +22,12 @@ public class LRUCache {
     }
     
     public void move_to_end( ListNode curr ) {
+        if ( curr == tail ) { return; }
+        //unlink this node with other nodes
+        curr.prev.next = curr.next;
+        curr.next.prev = curr.prev;
+        
+        //link to tail
         curr.prev = tail.next;
         tail.next = curr.prev;
         curr.next = null;
