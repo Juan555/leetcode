@@ -12,18 +12,7 @@ public class Solution {
         if ( root == null ) {
             return 0;
         }
-        int max = 0;
-        int a = 0;
-        vector v = new vector(0);
-        max_helper(root, a, v);
-        return v.lastElement;
-    }
-    
-    public void max_helper(TreeNode curr, int a, vector v) {
-        if ( curr == null ) {
-            v.add(a + 1);
-        }
-        max_helper ( curr.left, a + 1, v );
-        max_helper ( curr.right, a + 1, v );
-    }
+        int left = maxDepth(root->left);
+        int right = mexDepth(root->right);
+        return Math.max ( left, right );
 }
