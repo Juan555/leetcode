@@ -3,8 +3,8 @@ public class Solution {
         s = s.toLowerCase(); //to lower cases
         StringBuilder result = new StringBuilder();
         for ( int i = 0; i < s.length(); ++i ) {
-            if ( Character.isLetterOrDigit(s[i]) ) {
-                result.append(s[i]);
+            if ( Character.isLetterOrDigit(s.charAt(i)) ) {
+                result.append(s.charAt(i));
             }
         }
         String copy = result.toString();
