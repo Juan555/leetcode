@@ -7,7 +7,7 @@ public class Solution {
                 result.append(s.charAt(i));
             }
         }
-        String copy = result.toString().toLowerCase();
+        String copy = result.toString();
         int array_length = copy.length();
         for ( int i = 0; i < array_length/2; ++i ) {
             if ( copy.charAt(i)!=copy.charAt(array_length - 1 - i) ){
