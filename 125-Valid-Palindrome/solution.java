@@ -10,7 +10,7 @@ public class Solution {
         String copy = result.toString();
         int array_length = copy.length();
         for ( int i = 0; i < array_length/2; ++i ) {
-            if ( result[i].equals(result[array_length - 1 - i]) ){
+            if ( copy[i].equals(copy[array_length - 1 - i]) ){
                 return false;
             }
         }
