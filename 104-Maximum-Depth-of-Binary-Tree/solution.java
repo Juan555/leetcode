@@ -14,12 +14,12 @@ public class Solution {
         }
         int max = 0;
         int a = 0;
-        Vector v = new Vector(0);
+        vector v = new vector(0);
         max_helper(root, a, v);
         return v.lastElement;
     }
     
-    public void max_helper(TreeNode curr, int a, Vector v) {
+    public void max_helper(TreeNode curr, int a, vector v) {
         if ( curr == null ) {
             v.add(a + 1);
         }
