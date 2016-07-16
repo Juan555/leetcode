@@ -12,7 +12,7 @@ public class Solution {
         int max = 0;
         int[] result = new int[1];
         result[0] = 0;
-        max=max_helper(root, 0, max);
+        max=max_helper(root, 0, 0);
         return max;
     }
     
