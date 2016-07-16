@@ -21,22 +21,19 @@ public class LRUCache {
         capa = capacity;
     }
     
+    public void move_to_end( ListNode curr ) {
+        curr.prev = tail.next;
+        tail.next = curr.prev;
+        curr.next = null;
+        tail = curr;
+    }
+    
     public int get(int key) {
         int result = -1;
         if ( map.containsKey(key) ) {
-            result = map.get(key);
-            findKeyInListNode: if (found) {//Move to tail
-                curr.prev.next = curr.next;
-                curr.next.prev = curr.prev;
-                curr.prev = tail.next;
-                tail.next = curr.prev;
-            }
-            if (!found ) {
-                ListNode curr = new ListNode;
-                curr.val = key;
-                tail.next = curr;
-                curr.prev = tail;
-                tail = curr;
+            ListNode curr_node = map.get(key);
+            result = curr_node.val;
+            move_to_end(curr_node);
             }
         }
         return result;
@@ -44,27 +41,20 @@ public class LRUCache {
     
     public void set(int key, int value) {
         if ( map.containsKey(key) ) {
-            map.get(key) = value;
-            findKeyInListNode: if (found) {//move to tail
-                curr.prev.next = curr.next;
-                curr.next.prev = curr.prev;
-                curr.prev = tail.next;
-                tail.next = curr.prev;
-            }
+            ListNode curr_node = map.get(key);
+            move_to_end(curr_node);
         }
         
         else {
-            if (length + 1 >= capacity) { //find head, remove head and add to tail; find head in map, replace head
-                int temp_head = head.val;
+            if ( map.size() + 1 >= capa) { //find head, remove head and add to tail; find head in map, replace head
+                int temp_head = head.node_key;
                 head = head.next;//in ListNode
                 map.remove(temp_head);
             }
-            ListNode new_tail = new ListNode();
-            new_tail.val = key;
-            tail.next = new_tail;
-            new_tail.prev = tail;
-            tail = new_tail;
-            map.put ( key, value );//add to map; add to tail in ListNode
+            ListNode new_tail = new ListNode(key, value);
+            move_to_end(new_tail);
+            map.put(key, new_tail);
+            //add to map; add to tail in ListNode
         }
     }
 }
