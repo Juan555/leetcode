@@ -13,17 +13,17 @@ public class Solution {
             return 0;
         }
         int max = 0;
-        max_helper(root, 0, max);
-        return max + 1;
+        int a = 0;
+        Vector<Integer> v = new Vector<Integer>(0);
+        max_helper(root, a, v);
+        return v.lastElement;
     }
     
-    public void max_helper(TreeNode curr, int a, int max) {
+    public void max_helper(TreeNode curr, int a, Vector v) {
         if ( curr == null ) {
-            if ( a > max ) {
-                max = a +1;
-            }
+            v.add(a + 1);
         }
-        max_helper ( curr.left, a + 1, max );
-        max_helper ( curr.right, a + 1, max );
+        max_helper ( curr.left, a + 1, v );
+        max_helper ( curr.right, a + 1, v );
     }
 }
