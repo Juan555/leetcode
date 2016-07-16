@@ -14,7 +14,7 @@ public class Solution {
         }
         int max = 0;
         int a = 0;
-        Vector<Integer> v = new Vector<Integer>(0);
+        Vector v = new Vector(0);
         max_helper(root, a, v);
         return v.lastElement;
     }
