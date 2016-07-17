@@ -2,8 +2,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LRUCache {
-    ListNode head = new ListNode();
-    ListNode tail = head;
+    ListNode dummy_head = new ListNode();
+    ListNode tail = dummy_head;
     Map<Integer, ListNode> map = new HashMap<>();
     int capa;
     
@@ -63,15 +63,12 @@ public class LRUCache {
         
         else {
             if ( map.size() + 1 >= capa) { //find head, remove head and add to tail; find head in map, replace head
-             map.remove(head.node_key);
-               if (head.next != null) {
-                   head.next.prev = null;
-                   head.next = null;
-                   head = head.next;
+               ListNode temp = dummy_head.next;
+               map.remove(temp.node_key);
+               dummy_head.next = temp.next;
+               if ( dummy_head.next != null ) {
+                   dummy_head.next.prev = dummy_head;
                }
-               
-                
-                
             }
             ListNode new_tail = new ListNode(key, value);
             add_to_end(new_tail);
