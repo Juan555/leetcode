@@ -65,8 +65,9 @@ public class LRUCache {
             if ( map.size() + 1 >= capa) { //find head, remove head and add to tail; find head in map, replace head
                ListNode temp = dummy_head.next;
 
-               dummy_head.next = temp.next;
+               
                if ( dummy_head.next != null ) {
+                   dummy_head.next = temp.next;
                    map.remove(temp.node_key);
                    dummy_head.next.prev = dummy_head;
                }
