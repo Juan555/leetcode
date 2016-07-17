@@ -8,13 +8,13 @@ public class Solution {
     
     public static int Binary_search( int left, int right, int[] nums ) {
         if ( nums[left] <= nums[right] ) {
-            return nums[0];
+            return nums[left];
         }
         int mid = ( left + right ) / 2;
-        if ( nums[mid] < nums[left] ) {
-            return mid;
+        if ( nums[mid] < nums[mid - 1] ) {
+            return nums[mid];
         }
-        else if ( nums[mid] < nums[left] && nums[mid] < nums[right] ) {
+        else if ( nums[mid] >= nums[left] && nums[mid] >= nums[right] ) {
             return Binary_search ( mid + 1, right, nums );
         }
         else {
