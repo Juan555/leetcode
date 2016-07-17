@@ -62,7 +62,12 @@ public class LRUCache {
         }
         
         else {
-            if ( (map.size() + 1) > capa) { //find head, remove head and add to tail; find head in map, replace head
+            
+            ListNode new_tail = new ListNode(key, value);
+            add_to_end(new_tail);
+            map.put(key, new_tail);
+            //add to map; add to tail in ListNode
+            if ( map.size()  > capa) { //find head, remove head and add to tail; find head in map, replace head
               ListNode temp = dummy_head.next;
 
                
@@ -72,10 +77,6 @@ public class LRUCache {
                   dummy_head.next.prev = dummy_head;
               }
             }
-            ListNode new_tail = new ListNode(key, value);
-            add_to_end(new_tail);
-            map.put(key, new_tail);
-            //add to map; add to tail in ListNode
         }
     }
 }
