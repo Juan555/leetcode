@@ -6,7 +6,7 @@ public class Solution {
         return Binary_search( 0, nums.length - 1, int[] nums );
     }
     
-    public int Binary_search( int left, int right, int[] nums ) {
+    public static int Binary_search( int left, int right, int[] nums ) {
         if ( nums[left] <= nums[right] ) {
             return nums[0];
         }
