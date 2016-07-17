@@ -24,10 +24,10 @@ public class MinStack {
     }
     
     public int getMin() {
-        if ( !helper_stack.isEmpty() ){
+        // if ( !helper_stack.isEmpty() ){
             return helper_stack.peek();
-        }
-        return 0;
+        // }
+        // return 0;
     }
 }
 
