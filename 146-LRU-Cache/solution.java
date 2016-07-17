@@ -28,7 +28,10 @@ public class LRUCache {
         if ( curr.next != null ) {
             curr.next.prev = curr.prev;
         }
-        
+        add_to_end( curr );
+    }
+    
+    public void add_to_end( ListNode curr ) {
         //link to tail
         curr.prev = tail;
         tail.next = curr;
@@ -50,6 +53,7 @@ public class LRUCache {
     public void set(int key, int value) {
         if ( map.containsKey(key) ) {
             ListNode curr_node = map.get(key);
+            curr_node.val = value;
             move_to_end(curr_node);
         }
         
@@ -60,7 +64,7 @@ public class LRUCache {
                 map.remove(temp_head);
             }
             ListNode new_tail = new ListNode(key, value);
-            move_to_end(new_tail);
+            add_to_end(new_tail);
             map.put(key, new_tail);
             //add to map; add to tail in ListNode
         }
