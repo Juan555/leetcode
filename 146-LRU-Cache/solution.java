@@ -90,7 +90,7 @@ public class LRUCache {
         map.put(key, n);
         add_to_end(n); // update usage
 
-        if (map.size() > capacity) {
+        if (map.size() > capa) {
             n = head.next;
             map.remove(n.key);
             n.delete(); // delete dummy
