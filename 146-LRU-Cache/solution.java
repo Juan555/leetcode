@@ -4,7 +4,7 @@ public class LRUCache {
     Map<Integer, ListNode> map = new Hashmap<>();
     int capa;
     
-    public class ListNode{ //how to create a ListNode
+    static class ListNode{ //how to create a ListNode, why static though??????
 
         ListNode next;
         ListNode prev;
@@ -25,11 +25,13 @@ public class LRUCache {
         if ( curr == tail ) { return; }
         //unlink this node with other nodes
         curr.prev.next = curr.next;
-        curr.next.prev = curr.prev;
+        if ( curr.next != null ) {
+            curr.next.prev = curr.prev;
+        }
         
         //link to tail
-        curr.prev = tail.next;
-        tail.next = curr.prev;
+        curr.prev = tail;
+        tail.next = curr;
         curr.next = null;
         tail = curr;
     }
