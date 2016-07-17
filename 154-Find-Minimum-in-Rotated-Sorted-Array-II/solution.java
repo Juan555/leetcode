@@ -36,14 +36,14 @@ public class Solution {
     if (num == null || num.length == 0) return 0;
         int l = 0;
         int r = num.length - 1;
-        if (num.length == 1){
-            return num[0];
-        }
+
         while (l <= r) {
-            int k = l;
-            while (k <= r && num[k] == num[r]) k++;
+           
+            while (l <= r && num[l] == num[r]) l++;
             
-            l = k;
+            if (l > r){
+                return num[r];
+            }
             if (num[l] < num[r]) return num[l];
             int mid = l + (r - l) / 2;
             if (num[mid] >= num[l]) l = mid + 1;
