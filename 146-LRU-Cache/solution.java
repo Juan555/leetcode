@@ -1,128 +1,75 @@
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Design and implement a data structure for Least Recently Used (LRU) cache.
- * It should support the following operations: get and set.
- *
- * get(key) - Get the value (will always be positive) of the key if the key
- * exists in the cache, otherwise return -1.
- * (get means use, so we need to update)
- *
- * set(key, value) - Set or insert the value if the key is not already present.
- * When the cache reached its capacity, it should invalidate the least recently
- * used item before inserting a new item.
- *
- * Tags: Data Structure
- *
- * Use 2 data structures to implement an LRU Cache
- * 1. A Queue which is implemented using a doubly linked list. The max size of
- * the queue will be equal to cache size. Put most recently used at the end
- * 2. A Hash with Node's value as key and the Node as value
- * 3. A dummy head for Doubly LinkedList
- */
-class LRUCache {
+public class LRUCache {
+    ListNode head = new ListNode();
+    ListNode tail = head;
+    Map<Integer, ListNode> map = new HashMap<>();
+    int capa;
+    
+    static class ListNode{ //how to create a ListNode, why static though??????
 
-    Node dummy = new Node();
-    Node tail = dummy;
-    Map<Integer, Node> cache = new HashMap<>();
-    int capacity;
-
-    public LRUCache(int capacity) {
-        this.capacity = capacity;
-    }
-
-    public static void main(String[] args) {
-
-    }
-
-    /**
-     * Check key in map
-     * If not in map, return -1
-     * If in map, update usage by getting node and moving it to tail
-     * Then return its value
-     */
-    public int get(int key) {
-        if (!cache.containsKey(key)) return -1;
-        Node n = cache.get(key);
-        moveToTail(n);
-        return n.val;
-    }
-
-    /**
-     * Check key in map or not
-     * If in map, get node, update value, and move to tail
-     * If not, create node, put in cache, and add to tail
-     * Capacity can exceed when adding a new node
-     * If capacity exceeds, remove head from map and delete
-     */
-    public void set(int key, int value) {
-        if (cache.containsKey(key)) {
-            Node n = cache.get(key);
-            n.val = value;
-            moveToTail(n);
-            return;
-        }
-        Node n = new Node(key, value); // add new node
-        cache.put(key, n);
-        addToTail(n); // update usage
-
-        if (cache.size() > capacity) {
-            n = dummy.next;
-            cache.remove(n.key);
-            n.delete(); // delete dummy
-        }
-    }
-
-    /**
-     * Delete and add to tail
-     */
-    private void moveToTail(Node n) {
-        if (n == tail) return;
-        n.delete(); // unlink node with other nodes first
-        addToTail(n); // add it to tail
-    }
-
-    /**
-     * addRecursive node after tail and update tail to that node
-     */
-    private void addToTail(Node n) {
-        n.addAfter(tail);
-        tail = n;
-    }
-
-    /**
-     * Doubly linked list node
-     */
-    static class Node {
-        Node next;
-        Node prev;
-        int key;
+        ListNode next;
+        ListNode prev;
         int val;
-
-        Node() {}
-
-        Node(int key, int val) {
-            this.key = key;
-            this.val = val;
+        int node_key;
+        ListNode( int a, int b ) {
+            node_key = a;
+            val = b;
         }
-
-        /**
-         * Delete current node
-         */
-        private void delete() {
-            prev.next = next;
-            if (next != null) next.prev = prev;
+        ListNode(){} //ListNode constructor, has bug missing{}
+    }
+    
+    public LRUCache(int capacity) {
+        capa = capacity;
+    }
+    
+    public void move_to_end( ListNode curr ) {
+        if ( curr == tail ) { return; }
+        //unlink this node with other nodes
+        curr.prev.next = curr.next;
+        if ( curr.next != null ) {
+            curr.next.prev = curr.prev;
         }
-
-        /**
-         * addRecursive current node to preNode's next
-         */
-        private void addAfter(Node preNode) {
-            next = preNode.next;
-            if (next != null) next.prev = this;
-            preNode.next = this;
-            prev = preNode;
+        add_to_end( curr );
+    }
+    
+    public void add_to_end( ListNode curr ) {
+        //link to tail
+        curr.prev = tail;
+        tail.next = curr;
+        curr.next = null;
+        tail = curr;
+    }
+    
+    public int get(int key) {
+        int result = -1;
+        if ( map.containsKey(key) ) {
+            ListNode curr_node = map.get(key);
+            result = curr_node.val;
+            move_to_end(curr_node);
+            }
+        
+        return result;
+    }
+    
+    public void set(int key, int value) {
+        if ( map.containsKey(key) ) {
+            ListNode curr_node = map.get(key);
+            curr_node.val = value;
+            move_to_end(curr_node);
+        }
+        
+        else {
+            if ( map.size() + 1 >= capa) { //find head, remove head and add to tail; find head in map, replace head
+                int temp_head = head.node_key;
+                head = head.next;//in ListNode
+                map.remove(temp_head);
+            }
+            ListNode new_tail = new ListNode(key, value);
+            add_to_end(new_tail);
+            map.put(key, new_tail);
+            //add to map; add to tail in ListNode
         }
     }
 }
