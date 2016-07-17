@@ -7,11 +7,14 @@ public class Solution {
     }
     
     public int binary_search ( int left, int right, int[] nums ) {
-        if ( nums.length > 1 && nums[left] == nums[right] ) {
+        if ( left < right && nums[left] == nums[right] ) {
             return binary_search ( left + 1, right, nums );
         }
         if (nums[left] <= nums[right] ) {
             return nums[left];
+        }
+        else {
+            return nums[right];
         }
         
         int mid = ( left + right ) / 2;
