@@ -7,10 +7,10 @@ public class Solution {
     }
     
     public int binary_search ( int left, int right, int[] nums ) {
-        if ( nums[left] == nums[right] ) {
+        if ( nums.length > 1 && nums[left] == nums[right] ) {
             return binary_search ( left + 1, right, nums );
         }
-        if (nums[left] < nums[right] ) {
+        if (nums[left] <= nums[right] ) {
             return nums[left];
         }
         
