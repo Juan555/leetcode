@@ -11,5 +11,6 @@ public class Solution {
                 return nums[i];
             }
         }
+        return nums[0];
     }
 }
