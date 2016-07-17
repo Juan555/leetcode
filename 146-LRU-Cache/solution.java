@@ -87,7 +87,7 @@ public class LRUCache {
               if ( dummy_head.next != null ) {
                   dummy_head.next = temp.next;
                   map.remove(temp.node_key);
-                  dummy_head.next.prev = dummy_head;
+                  dummy_head.next.prev = dummy_head;}
             }
         }
     }
