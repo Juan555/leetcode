@@ -48,6 +48,6 @@ public class Solution {
             if (num[mid] >= num[l]) l = mid;
             else r = mid;
         }
-        return l;
+        return nums[l];
     }
 }
