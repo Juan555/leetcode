@@ -45,7 +45,7 @@ public class Solution {
             if (num[l] < num[r]) return num[l];
             
             int mid = l + (r - l) / 2;
-            if (num[mid] >= num[l]) l = mid;
+            if (num[mid] >= num[l]) l = mid + 1;
             else r = mid;
         }
         return num[l];
