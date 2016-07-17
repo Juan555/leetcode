@@ -18,10 +18,6 @@ public class LRUCache {
             val = b;
         }
         ListNode(){} //ListNode constructor, has bug missing{}
-        private void delete() {
-            prev.next = next;
-            if (next != null) next.prev = prev;
-        }
         
     }
     
@@ -66,29 +62,20 @@ public class LRUCache {
         }
         
         else {
-            // if ( map.size() + 1 >= capa) { //find head, remove head and add to tail; find head in map, replace head
-            //   ListNode temp = dummy_head.next;
-
-               
-            //   if ( dummy_head.next != null ) {
-            //       dummy_head.next = temp.next;
-            //       map.remove(temp.node_key);
-            //       dummy_head.next.prev = dummy_head;
-            //   }
-            // }
-            ListNode new_tail = new ListNode(key, value);
-            add_to_end(new_tail);
-            map.put(key, new_tail);
-            //add to map; add to tail in ListNode
-            if (map.size() > capa ) {
-                  ListNode temp = dummy_head.next;
+            if ( map.size() + 1 > capa) { //find head, remove head and add to tail; find head in map, replace head
+              ListNode temp = dummy_head.next;
 
                
               if ( dummy_head.next != null ) {
                   dummy_head.next = temp.next;
                   map.remove(temp.node_key);
-                  dummy_head.next.prev = dummy_head;}
+                  dummy_head.next.prev = dummy_head;
+              }
             }
+            ListNode new_tail = new ListNode(key, value);
+            add_to_end(new_tail);
+            map.put(key, new_tail);
+            //add to map; add to tail in ListNode
         }
     }
 }
