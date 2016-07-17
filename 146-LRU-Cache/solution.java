@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class LRUCache {
     ListNode head = new ListNode();
     ListNode tail = head;
