@@ -36,6 +36,9 @@ public class Solution {
     if (num == null || num.length == 0) return 0;
         int l = 0;
         int r = num.length - 1;
+        if (num.length == 1){
+            return num[0];
+        }
         while (l <= r) {
             int k = l;
             while (k <= r && num[k] == num[r]) k++;
