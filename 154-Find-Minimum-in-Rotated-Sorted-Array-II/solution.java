@@ -1,5 +1,5 @@
 public class Solution {
-    public int findMin(int[] nums) {
+    public int findMin(int[] num) {
         if (num == null || num.length == 0) return 0;
         int l = 0;
         int r = num.length - 1;
