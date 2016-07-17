@@ -7,14 +7,14 @@ public class Solution {
     }
     
     public int binary_search ( int left, int right, int[] nums ) {
-        if ( left < right && nums[left] == nums[right] ) {
-            return binary_search ( left + 1, right, nums );
-        }
-        if (nums[left] <= nums[right] ) {
+        if (left == right) {
             return nums[left];
         }
-        else {
-            return nums[right];
+        if ( left < right && nums[left] == nums[right] ) {
+            return binary_search ( left, right - 1, nums );
+        }
+        if (nums[left] < nums[right] ) {
+            return nums[left];
         }
         
         int mid = ( left + right ) / 2;
@@ -24,14 +24,14 @@ public class Solution {
         if ( nums[right] == nums[right - 1] ) {
             return binary_search ( left, right - 1, nums );
         }
-        if ( mid >= 1 && nums[mid] <= nums[left] ) {
+        if ( mid >= 1 && nums[mid] < nums[left] ) {
             return nums[mid];
         }
         else if ( nums[mid] >= nums[left] && nums[mid] >= nums[right] ) {
-            return binary_search ( mid + 1, right, nums );
+            return binary_search ( mid , right, nums );
         }
         else {
-            return binary_search ( left, mid - 1, nums );
+            return binary_search ( left, mid , nums );
         }
     }
 }
