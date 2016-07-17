@@ -15,10 +15,10 @@ public class Solution {
             return mid;
         }
         else if ( nums[mid] < nums[left] && nums[mid] < nums[right] ) {
-            return Binary_search ( mid + 1, right, int[] nums );
+            return Binary_search ( mid + 1, right, nums );
         }
         else {
-            return Binary_search ( left, mid - 1, int[] nums );
+            return Binary_search ( left, mid - 1, nums );
         }
     }
 }
