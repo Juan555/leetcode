@@ -1,9 +1,9 @@
 public class Solution {
     public static int findMin(int[] nums) {
-        if ( nums.length == 1 ) {
+        if(nums.length == 1){
             return nums[0];
-        }
-        return binarySearch( 0, nums.length - 1, int[] nums );
+        }  
+        return binarySearch(0, nums.length - 1, nums);
     }
     
     public static int binarySearch(int left, int right, int[] nums){
