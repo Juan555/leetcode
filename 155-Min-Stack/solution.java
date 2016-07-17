@@ -35,11 +35,11 @@ public class MinStack {
     }
     
     public int top() {
-        minStack.peek();
+        return minStack.peek();
     }
     
     public int getMin() {
-        helper_stack.peek();
+        return helper_stack.peek();
     }
 }
 
