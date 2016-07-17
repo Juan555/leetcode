@@ -67,7 +67,7 @@ public class LRUCache {
             add_to_end(new_tail);
             map.put(key, new_tail);
             //add to map; add to tail in ListNode
-            if ( map.size()  > capa) { //find head, remove head and add to tail; find head in map, replace head
+            if ( map.size()  > capa) { //big bug here, remove after adding cuz u might remove null pointer
               ListNode temp = dummy_head.next;
 
                
