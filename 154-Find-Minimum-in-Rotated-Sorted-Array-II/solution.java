@@ -7,15 +7,18 @@ public class Solution {
     }
     
     public int binary_search ( int left, int right, int[] nums ) {
-        if ( nums[left] <= nums[right] ) {
+        if ( nums[left] = nums[right] ) {
+            return binary_search ( left + 1, right, nums );
+        }
+        if (nums[left] < nums[right] ) {
             return nums[left];
         }
         
         int mid = ( left + right ) / 2;
-        if ( nums[left] = nums[left + 1] ) {
+        if ( nums[left] == nums[left + 1] ) {
             return binary_search ( left + 1, right, nums );
         }
-        if ( nums[right] = nums[right - 1] ) {
+        if ( nums[right] == nums[right - 1] ) {
             return binary_search ( left, right - 1, nums );
         }
         if ( mid >= 1 && nums[mid] <= nums[left] ) {
