@@ -11,7 +11,7 @@ public class Solution {
             return nums[left];
         }
         int mid = ( left + right ) / 2;
-        if ( mid >= 1 && nums[mid] < nums[mid - 1]) {
+        if ( mid >= 1 && nums[mid] < nums[mid - 1]) { //pay attention to [ 2, 1 ], it will cause null pointer
             return nums[mid];
         }
         else if ( nums[mid] >= nums[left] && nums[mid] >= nums[right] ) {
