@@ -92,7 +92,7 @@ public class LRUCache {
 
         if (map.size() > capa) {
             n = head.next;
-            map.remove(n.key);
+            map.remove(n.node_key);
             n.delete(); // delete dummy
         }
     }
