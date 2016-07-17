@@ -81,9 +81,13 @@ public class LRUCache {
             map.put(key, new_tail);
             //add to map; add to tail in ListNode
             if (map.size() > capa ) {
-                new_tail = dummy_head.next;
-                map.remove(new_tail.node_key);
-                new_tail.delete();
+                  ListNode temp = dummy_head.next;
+
+               
+              if ( dummy_head.next != null ) {
+                  dummy_head.next = temp.next;
+                  map.remove(temp.node_key);
+                  dummy_head.next.prev = dummy_head;
             }
         }
     }
