@@ -40,13 +40,12 @@ public class Solution {
         while (l <= r) {
            
             while (l <= r && num[l] == num[r]) l++;
-            
-            if (l > r){
-                return num[r];
-            }
+            if (l > r){return num[r];}
+        
             if (num[l] < num[r]) return num[l];
+            
             int mid = l + (r - l) / 2;
-            if (num[mid] >= num[l]) l = mid + 1;
+            if (num[mid] >= num[l]) l = mid;
             else r = mid;
         }
         return l;
