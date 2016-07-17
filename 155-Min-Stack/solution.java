@@ -16,7 +16,7 @@ public class MinStack {
     
     public void pop() {
         if ( !minStack.isEmpty() ) {
-            if ( minStack.pop() == helper_stack.peek() ) {
+            if ( minStack.pop().equals(helper_stack.peek() )) {
                 helper_stack.pop();
             }
         }
@@ -29,7 +29,10 @@ public class MinStack {
     }
     
     public int getMin() {
-        return helper_stack.peek();
+        if ( !helper_stack.isEmpty() ){
+            return helper_stack.peek();
+        }
+        return 0;
     }
 }
 
