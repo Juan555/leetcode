@@ -17,7 +17,7 @@ public class Solution {
         boolean judge = false;
         while (q.size() >= 1 ) {
             List<Integer> comp = new ArrayList<Integer>();
-            int size = q.size();
+            int size = q.size();//there is a huge bug here!!!!! remember to have fixed size
             for ( int i = 0; i < size; ++i ) {
                 TreeNode n = q.poll();
                 if ( !judge ) {comp.add(n.val);}
