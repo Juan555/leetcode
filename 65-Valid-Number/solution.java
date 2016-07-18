@@ -11,6 +11,7 @@ public class Solution {
         //     i = 1; 
         //     cal = true;
         // }
+        int len = s.length();
         int i = 0, e = len - 1;
         // whitespace
         while (i <= e && Character.isWhitespace(s.charAt(i))) i++;
@@ -19,22 +20,34 @@ public class Solution {
         // skip leading +/-
         if (s.charAt(i) == '+' || s.charAt(i) == '-') i++;
         
-        while ( i < s.length() ) {//you only need to consider right situation
+        int count_e = 0;
+        int count_plus = 0;
+        
+        while ( i <= e  ) {//you only need to consider right situation
             char c = s.charAt(i);
             if ( Character.isDigit(c) ) { num = true; }
-            else if ( num && c == 'e' ) {
+            else if ( num && c == 'e' ) { //"3.5e+3.5e+3.5" is not a number
+                count_e++;
+                if ( count_e > 1 ) {return false;}
                 exp = true;
                 num = false;
                 dot = false;
                 cal = false;
+                
             }
-            else if ( num && ( c == '+' || c == '-' ) ) {
+            else if ( exp && ( c == '+' || c == '-' ) ) { // 6+1 is not a number........dont ask me why...i dont know...
                 cal = true;
                 num = false;
                 dot = false;
                 exp = false;
             }
-            else if ( dot == false&& exp == false && c == '.' ) {
+            else if ( count_e == 0 && num && dot == false && c == '.' ) {//bug here, dot == false for 0..
+                                                         //another bug:"6e6.5" is not a number
+                exp = false;
+                cal = false;
+                dot = true;
+            }
+            else if ( dot == false && exp == false && c == '.' ) {
                 dot = true;
                 num = false;
                 exp = false;
