@@ -1,7 +1,7 @@
 public class Solution {
     public boolean isNumber(String s) {
         s = s.trim();
-        if ( s == "" ) { return false; }
+        if ( s == null ) { return false; }
         boolean num = false;
         boolean cal = false;
         boolean exp = false;
@@ -15,21 +15,23 @@ public class Solution {
         while ( i < s.length() ) {//you only need to consider right situation
             char c = s.charAt(i);
             if ( Character.isDigit(c) ) { num = true; }
-            else if ( num && c == 'e' ) {
+            else {
+               if ( c == 'e' ) {
                 exp = true;
                 num = false;
-            }
-            else if ( num && (c == '+' || c == '-') ) {
-                num = false;
-                cal = true;
+                }
+                else if ( c == '+' || c == '-')  {
+                    num = false;
+                    cal = true;
                 
-            }
-            else if ( num && c == '.') {
-                dot = true;
-                num = false;
+                 }
+                else if ( c == '.') {
+                    dot = true;
+                    num = false;
                 
+                 }
+                 else { return false; } 
             }
-            else { return false; }
             ++i;
         }
         return num;//??
