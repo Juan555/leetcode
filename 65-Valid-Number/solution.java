@@ -29,7 +29,7 @@ public class Solution {
                 dot = false;
                 exp = false;
             }
-            else if ( dot == false && && exp == false && c == '.' ) {
+            else if ( dot == false && exp == false && c == '.' ) {
                 dot = true;
                 num = false;
                 exp = false;
