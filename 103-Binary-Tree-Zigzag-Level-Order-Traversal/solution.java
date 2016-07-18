@@ -15,7 +15,7 @@ public class Solution {
         q.add(root);
         boolean judge = false;
         while (q.size() >= 1 ) {
-            Queue<Integer> comp = new LinkedList<Integer>();
+            List<Integer> comp = new ArrayList<Integer>();
             for ( int i = 0; i < q.size(); ++i ) {
                 TreeNode n = q.poll();
                 if ( !judge ) {comp.add(n.val);}
