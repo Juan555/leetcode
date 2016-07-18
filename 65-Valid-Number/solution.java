@@ -6,31 +6,52 @@ public class Solution {
         boolean cal = false;
         boolean exp = false;
         boolean dot = false;
-        int i = 0;
-        if ( s.charAt(i) == '+' || s.charAt(i) == '-' ) { 
-            i = 1; 
-            cal = true;
-        }
+        int i = 0, e = len - 1;
+        // whitespace
+        while (i <= e && Character.isWhitespace(s.charAt(i))) i++;
+        if (i > len - 1) return false;
+        while (e >= i && Character.isWhitespace(s.charAt(e))) e--;
+        // skip leading +/-
+        if (s.charAt(i) == '+' || s.charAt(i) == '-') i++;
         
         while ( i < s.length() ) {//you only need to consider right situation
             char c = s.charAt(i);
             if ( Character.isDigit(c) ) { num = true; }
-            else {
-               if ( c == 'e' ) {
+            else if ( num && c == 'e' ) {
                 exp = true;
                 num = false;
-                }
-                else if ( c == '+' || c == '-')  {
-                    num = false;
-                    cal = true;
+                dot = false;
+                cal = false;
+            }
+            else if ( num && ( c == '+' || c == '-' ) ) {
+                cal = true;
+                num = false;
+                dot = false;
+                exp = false;
+            }
+            else if ( dot == false && && exp == false && c == '.' ) {
+                dot = true;
+                num = false;
+                exp = false;
+                cal = false;
+            }
+            else { return false; }
+            //   if ( c == 'e' ) { //before and after e should be number
+            //         if ( num == false || )
+            //         exp = true;
+            //         num = false;
+            //     }
+            //     else if ( c == '+' || c == '-' )  { //before and after + should be number
+            //         num = false;
+            //         cal = true;
                 
-                 }
-                else if ( c == '.') {
-                    dot = true;
-                    num = false;
+            //      }
+            //     else if ( c == '.' ) { //before or after or before and after should be number
+            //         dot = true;
+            //         num = false;
                 
-                 }
-                 else { return false; } 
+            //      }
+            //      else { return false; } 
             }
             ++i;
         }
