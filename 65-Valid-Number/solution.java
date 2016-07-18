@@ -1,7 +1,7 @@
 public class Solution {
     public boolean isNumber(String s) {
         s = s.trim();
-        if ( s == "" ) { return false; }
+        if ( s == " " ) { return false; }
         boolean num = false;
         boolean cal = false;
         boolean exp = false;
