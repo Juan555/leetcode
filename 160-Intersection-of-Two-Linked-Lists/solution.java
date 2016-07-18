@@ -24,7 +24,7 @@ public class Solution {
             b_length --;
         }
         
-        while ( headA != null and headB != null ) {
+        while ( headA != null && headB != null ) {
             if ( headA.val == headB.val ) {
                 return headA;
             }
