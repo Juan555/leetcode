@@ -19,7 +19,7 @@ public class Solution {
             for ( int i = 0; i < q.size(); ++i ) {
                 TreeNode n = q.poll();
                 if ( !judge ) {comp.add(n.val);}
-                else {comp.add(0, n);}
+                else {comp.add(0, n.val);}
                 if ( n.left != null ) {comp.add(n.left);}
                 if ( n.right != null ) { comp.add(n.right); }
             }
