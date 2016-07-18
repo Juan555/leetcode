@@ -15,7 +15,7 @@ public class Solution {
                 int test = i + 1;
                 char test_char = s.charAt(test);
                 while ( test < s.length() - 1 ) {
-                    if ( Character.isDigit ( test_char ) { break; }
+                    if ( Character.isDigit ( test_char ) ) { break; }
                     else if ( Character.isWhitespace(test_char) ) { test ++; }
                     else { return false; }
                 }
