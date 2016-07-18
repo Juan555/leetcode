@@ -6,6 +6,11 @@ public class Solution {
         boolean cal = false;
         boolean exp = false;
         boolean dot = false;
+        // int i = 0;
+        // if ( s.charAt(i) == '+' || s.charAt(i) == '-' ) { 
+        //     i = 1; 
+        //     cal = true;
+        // }
         int i = 0, e = len - 1;
         // whitespace
         while (i <= e && Character.isWhitespace(s.charAt(i))) i++;
@@ -29,7 +34,7 @@ public class Solution {
                 dot = false;
                 exp = false;
             }
-            else if ( dot == false && exp == false && c == '.' ) {
+            else if ( dot == false&& exp == false && c == '.' ) {
                 dot = true;
                 num = false;
                 exp = false;
