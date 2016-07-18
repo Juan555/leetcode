@@ -17,7 +17,7 @@ public class Solution {
         while (q.size() >= 1 ) {
             Queue<Integer> comp = new LinkedList<Integer>();
             for ( int i = 0; i < q.size(); ++i ) {
-                int n = q.poll();
+                TreeNode n = q.poll();
                 if ( !judge ) {comp.add(n.val);}
                 else {comp.add(0, n);}
                 if ( n.left != null ) {comp.add(n.left);}
