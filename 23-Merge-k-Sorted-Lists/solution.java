@@ -22,7 +22,7 @@ public class Solution {
             queue.offer(a);
         }
         //start the list and constantly add listNode into the queue
-        ListNode dummy = new ListNode();
+        ListNode dummy = new ListNode(0);
         ListNode curr = dummy;
         while ( !queue.isEmpty() ) {
             ListNode h = queue.poll();
