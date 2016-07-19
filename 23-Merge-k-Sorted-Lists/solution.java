@@ -19,7 +19,7 @@ public class Solution {
         });
         //put first ListNode in priorityQueue
         for ( ListNode a: lists ){ // bug here:[[]]
-            if (list != null ){
+            if (a != null ){
             queue.offer(a);}
         }
         //start the list and constantly add listNode into the queue
