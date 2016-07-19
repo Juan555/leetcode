@@ -8,32 +8,32 @@
  */
 public class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
-        if(lists==null||lists.length==0)
-        return null;
- 
-    PriorityQueue<ListNode> queue = new PriorityQueue<ListNode>(new Comparator<ListNode>(){
-        public Integer compare(ListNode l1, ListNode l2){
-            return (l1.val).compareTo(l2.val);
+        //check null
+        if ( Lists.length < 1 ) {return null; }
+        //build  PriorityQueue
+        PriorityQueue<ListNode> queue = new PriorityQueue( lists.length, new Comparator<ListNode>(){
+            @override
+            public int compare( ListNode a, ListNode b ) {
+                return a.val - b.val;
+            }
+        });
+        //put first ListNode in priorityQueue
+        for ( ListNode a: lists ){
+            queue.offer(a);
         }
-    });
- 
-    ListNode head = new ListNode(0);
-    ListNode p = head;
- 
-    for(ListNode list: lists){
-        if(list!=null)
-            queue.offer(list);
-    }    
- 
-    while(!queue.isEmpty()){
-        ListNode n = queue.poll();
-        p.next = n;
-        p=p.next;
- 
-        if(n.next!=null)
-            queue.offer(n.next);
-    }    
- 
-    return head.next;
+        //start the list and constantly add listNode into the queue
+        ListNode dummy = new ListNode();
+        ListNode curr = dummy;
+        while ( !queue.isEmpty() ) {
+            ListNode h = queue.poll();
+            curr.next = h;
+            curr = curr.next;
+            if ( h.next != null ){
+                queue.offer(h.next);
+            }
+        }
+        return dummy.next;//how to make sure the head is there
+        
+
     }
 }
