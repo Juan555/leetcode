@@ -9,7 +9,7 @@
 public class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
         //check null
-        if ( Lists.length < 1 ) {return null; }
+        if ( lists.length < 1 ) {return null; }
         //build  PriorityQueue
         PriorityQueue<ListNode> queue = new PriorityQueue( lists.length, new Comparator<ListNode>(){
             @override
