@@ -1,5 +1,5 @@
 public class Solution {
-    public boolean isNumber(String s) {
+    public boolean isNumber(String s) {//most important thing:2E-11 = 2 * 10^(-11)
         s = s.trim();
         if ( s == "" ) { return false; }
         boolean num = false;
