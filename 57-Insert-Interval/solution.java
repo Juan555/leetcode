@@ -10,7 +10,7 @@
 public class Solution {
     public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
         //create result list
-        List<Interval> result = new List<Interval>;
+        List<Interval> result = new List<Interval>();
         result.add ( newInterval );
         //traverse intervals
         //1.intervals[i] < newInterval-->add intervals[i] to the position before newInterval
