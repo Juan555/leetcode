@@ -7,7 +7,7 @@
  *     Interval(int s, int e) { start = s; end = e; }
  * }
  */
-public class Solution {
+public class Solution {//bug: when end and start overlap, combine them
     public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
         //create result list
         List<Interval> result = new ArrayList<Interval>();
@@ -17,12 +17,14 @@ public class Solution {
         //2.intervals[i] > newInterval-->add intervals[i] after newInterval
         //3.overlap-->return min(start) and max(end)
         for ( Interval i: intervals ) {
-            if ( i.end <= newInterval.start ) { result.add ( result.size() - 1, i);}
-            else if ( i.start >= newInterval.end ) { result.add ( i );}
+            int a = result.get(result.size() - 1).start;
+            int b = result.get(result.size() - 1).end;
+            if ( i.end < a ) { result.add ( result.size() - 1, i);}
+            else if ( i.start > b ) { result.add ( i );}
             else {
-                int begin = Math.min ( i.start, newInterval.start );
-                int last = Math.max ( i.end, newInterval.end );
-                result.set ( result.size() - 1, new Interval ( begin, end ) );
+                int begin = Math.min ( i.start, a );
+                int last = Math.max ( i.end, b );
+                result.set ( result.size() - 1, new Interval ( begin, last ) );
             }
         }
         return result;
