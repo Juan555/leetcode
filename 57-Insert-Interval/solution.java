@@ -13,7 +13,7 @@ public class Solution {//bug: when end and start overlap, combine them
         List<Interval> result = new ArrayList<Interval>();
         result.add ( newInterval );
         //check null???
-        if (intervals == null || newIntervals.size() == 0 ) return result;
+        if (intervals == null || intervals.size() == 0 ) return result;
         //traverse intervals
         //1.intervals[i] < newInterval-->add intervals[i] to the position before newInterval
         //2.intervals[i] > newInterval-->add intervals[i] after newInterval
