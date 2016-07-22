@@ -12,7 +12,7 @@ public class Solution {
         int length = input.length();
         int total_count = 0;
         
-        while ( total_count <= length ) {
+        while ( total_count < length ) {
             int count = 1;
             while ( total_count + count < length  && input.charAt(total_count) == input.charAt(total_count + count) ) {
                 count++;
