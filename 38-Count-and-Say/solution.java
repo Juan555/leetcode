@@ -19,7 +19,7 @@ public class Solution {
                 count++;
             }
             
-            output.append( count + ""  );
+            output.append( Integer.toString(count) );
             output.append(input.charAt(total_count) + "");
             total_count += count;
             
