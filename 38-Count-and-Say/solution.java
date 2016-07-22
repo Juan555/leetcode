@@ -15,12 +15,12 @@ public class Solution {
         
         while ( total_count < length ) {
             int count = 1;
-            while ( total_count + count < length  && input.charAt(total_count) == input.charAt(total_count + count) ) {
+            while ( (total_count + count) < length  && input.charAt(total_count) == input.charAt(total_count + count) ) {
                 count++;
             }
             
-            output.append( Integer.toString(count)  );
-            output.addpend(Integer.toString(input.charAt(total_count)));
+            output.append( count + ""  );
+            output.append(input.charAt(total_count) + "");
             total_count += count;
             
         }
