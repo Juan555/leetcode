@@ -17,8 +17,9 @@ public class Solution {
             while ( total_count + count < length  && input.charAt(total_count) == input.charAt(total_count + count) ) {
                 count++;
             }
-            total_count += count;
+            
             output.append( Integer.toString(count) + Integer.toString(input.charAt(total_count)) );
+            total_count += count;
             
         }
         return output.toString();
