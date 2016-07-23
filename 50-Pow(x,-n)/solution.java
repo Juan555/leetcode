@@ -1,17 +1,14 @@
 public class Solution {
-    public double myPow(double x, int n) {
-        
-        if ( x == 0 ) { return 0;}
+    public double myPow(double x, int n) { // Time Limit Exceeded 
         if ( n < 0 ) {
             x = 1/x;
             n =  Math.abs(n);
         }
-        if ( n == 0 ) { return 1;}
-        double result = x;
-        while ( n > 1 ) {
-            result *= x;
-            n--;
-        }
-        return result;
+        return power( x, n );
+    }
+    public double power ( double x, int n ) {
+        if ( n == 0 ) return 1;
+        double v = power ( x, n/2 );
+        return n%2=1? v * v * x : v * v;
     }
 }
