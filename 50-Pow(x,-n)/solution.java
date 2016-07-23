@@ -4,7 +4,7 @@ public class Solution {
         if ( x == 0 ) { return 0;}
         if ( n < 0 ) {
             x = 1/x;
-            n = -n;
+            n =  Math.abs(n);
         }
         if ( n == 0 ) { return 1;}
         double result = x;
