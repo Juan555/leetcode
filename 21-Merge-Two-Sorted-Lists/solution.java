@@ -14,7 +14,7 @@ public class Solution {
         else { ListNode curr = new ListNode( l1.val ); }
         ListNode head = new ListNode(0);
         head.next = curr;
-        while ( l1 != null || l2 != null ) {
+        while ( l1 != null && l2 != null ) {
             if ( l1.val > l2.val ) {
                 curr.next = l2;
                 l2 = l2.next;
