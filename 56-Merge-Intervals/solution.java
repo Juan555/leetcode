@@ -19,7 +19,7 @@ public class Solution {
         });
        
         //add elements into result
-        result.add ( intervals.get(0 );
+        result.add ( intervals.get(0) );
         for ( int i = 1; i < intervals.size(); ++i ) {
             int length = intervals.size();
             if ( intervals.get(i).start > result.get(length - 1).end ) {result.add(intervals.get(i));}
