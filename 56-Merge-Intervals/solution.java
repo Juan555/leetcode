@@ -21,7 +21,7 @@ public class Solution {
         //add elements into result
         result.add ( intervals.get(0) );
         for ( int i = 1; i < intervals.size(); ++i ) {
-            int length = intervals.size();
+            int length = result.size();
             if ( intervals.get(i).start > result.get(length - 1).end ) {result.add(intervals.get(i));}
             else if ( intervals.get(i).end < result.get(length - 1).start ) {result.add(0, intervals.get(i));}
             else {
