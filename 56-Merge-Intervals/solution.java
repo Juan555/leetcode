@@ -12,11 +12,12 @@ public class Solution {
         List<Interval> result = new List<Interval> ();
         if ( intervals.size() == 0 ) return result;
         //sort
-        Array.sort = new intervals(intervals.size(), comparactor<Interval> {
+        Collections.sort ( intervals, new Comparator<Interval>{
             public int compare( Interval a, Interval b ) {
                 return a.start - b.start;
             }
-        });
+            };)
+       
         //add elements into result
         result.add ( intervals[0] );
         for ( int i = 1; i < intervals.size(); ++i ) {
