@@ -19,14 +19,14 @@ public class Solution {
         });
        
         //add elements into result
-        result.add ( intervals[0] );
+        result.add ( intervals.get(0 );
         for ( int i = 1; i < intervals.size(); ++i ) {
             int length = intervals.size();
-            if ( intervals[i].start > result[length - 1].end ) {result.add(intervals[i]);}
-            else if ( intervals[i].end < result[length - 1].start ) {result.add(0, intervals[i]);}
+            if ( intervals.get(i).start > result.get(length - 1).end ) {result.add(intervals.get(i));}
+            else if ( intervals.get(i).end < result.get(length - 1).start ) {result.add(0, intervals.get(i));}
             else {
-                int min = Math.min(intervals[i].start, result[length - 1].start);
-                int max = Math.max(intervals[i].end, result[length - 1].end);
+                int min = Math.min(intervals.get(i).start, result.get(length - 1).start);
+                int max = Math.max(intervals.get(i).end, result.get(length - 1).end);
                 result.set( length - 1, new Interval(min, max) );
             }
         }
