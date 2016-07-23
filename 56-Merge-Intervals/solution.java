@@ -9,7 +9,7 @@
  */
 public class Solution {
     public List<Interval> merge(List<Interval> intervals) {
-        List<Interval> result = new List<Interval> ();
+        List<Interval> result = new ArrayList<Interval> ();
         if ( intervals.size() == 0 ) return result;
         //sort
         Collections.sort ( intervals, new Comparator<Interval>(){
