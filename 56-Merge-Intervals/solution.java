@@ -16,7 +16,7 @@ public class Solution {
             public int compare( Interval a, Interval b ) {
                 return a.start - b.start;
             }
-            };)
+            });
        
         //add elements into result
         result.add ( intervals[0] );
