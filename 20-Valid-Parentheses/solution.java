@@ -1,6 +1,6 @@
 public class Solution {
     public boolean isValid(String s) {
-        Stack < char > result = new Stack < char > ();
+        Stack < Character > result = new Stack < Character > ();
         for ( char a: s ) {
             if ( a == "(" || a = "[" || a = "{" ) {
                 result.push ( a );
