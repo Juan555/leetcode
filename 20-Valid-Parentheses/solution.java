@@ -1,7 +1,7 @@
 public class Solution {
     public boolean isValid(String s) {
         Stack < Character > result = new Stack < Character > ();
-        for ( char a: s ) {
+        for ( char a: s.toCharArray() ) {
             if ( a == "(" || a = "[" || a = "{" ) {
                 result.push ( a );
             }
