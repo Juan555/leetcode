@@ -1,7 +1,7 @@
 // import java.util.Arrays;
 import java.util.HashMap;
 public class Solution {
-    public int longestConsecutive(int[] nums) {//bug for [0,0] and count = 1
+    public int longestConsecutive(int[] num) {//bug for [0,0] and count = 1
         // if ( nums == null ) { return 0; } O(nlogn)
         // if ( nums.length == 1 ) { return 1; }
         // Arrays.sort( nums );
