@@ -20,22 +20,30 @@ public class Solution {
         // return max;
         
         //create a map to store the number of consecutive elements
-        Map<Integer, Integer> map = new HashMap<>();
-        if ( nums == null ) { return 0; } O(nlogn)
-        if ( nums.length == 1 ) { return 1; }
-        int result = 1;
-        for ( int i: nums ) {
-            //1.check if reocurr, if yes:continue, if not--> 2.check before and after exists, if yes, check it's continued length; if not, set its length to 0-->3.add up before and after and itself-->4compare max and sum,update-->5.set the new sequence's head and tail's length to the new sum
-            if ( !map.containsKey(i) ) {
-                int left = map.containsKey(i - 1)? map.get(i - 1) : 0;
-                int right = map.containsKey(i + 1)? map.get(i + 1) : 0;
-                int sum = left + right + 1;
-                result = Math.max ( sum, result );
-                map.put( i - left, sum);
-                map.put( i + right, sum);
-            }
-            else { continue; }
+        int res = 0;
+    HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+    for (int n : num) {
+        if (!map.containsKey(n)) {
+            int left = (map.containsKey(n - 1)) ? map.get(n - 1) : 0;
+            int right = (map.containsKey(n + 1)) ? map.get(n + 1) : 0;
+            // sum: length of the sequence n is in
+            int sum = left + right + 1;
+            map.put(n, sum);
+            
+            // keep track of the max length 
+            res = Math.max(res, sum);
+            
+            // extend the length to the boundary(s)
+            // of the sequence
+            // will do nothing if n has no neighbors
+            map.put(n - left, sum);
+            map.put(n + right, sum);
         }
-        return result;
+        else {
+            // duplicates
+            continue;
+        }
+    }
+    return res;
     }
 }
