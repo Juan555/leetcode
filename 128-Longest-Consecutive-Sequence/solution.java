@@ -30,7 +30,7 @@ public class Solution {
                 int left = map.containsKey(i - 1)? map.get(i - 1) : 0;
                 int right = map.containsKey(i + 1)? map.get(i + 1) : 0;
                 int sum = left + right + 1;
-                map.put( i, sum );
+                map.put( i, sum );//bug here, you should also put THIS number into the map
                 result = Math.max ( sum, result );
                 map.put( i - left, sum);
                 map.put( i + right, sum);
