@@ -1,6 +1,6 @@
 import java.util.Arrays;
 public class Solution {
-    public int longestConsecutive(int[] nums) {
+    public int longestConsecutive(int[] nums) {//bug for [0,0] and count = 1
         if ( nums == null ) { return 0; }
         if ( nums.length == 1 ) { return 1; }
         Arrays.sort( nums );
