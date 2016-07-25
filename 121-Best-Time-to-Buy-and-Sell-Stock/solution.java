@@ -2,7 +2,7 @@ public class Solution {
     public int maxProfit(int[] prices) {
         int[] max = new int[prices.length - 1];
         max[max.length - 1] = prices[prices.length - 1];
-        for ( int i = max.length - 1; i > 0; ++i ) {
+        for ( int i = max.length - 1; i > 0; --i ) {
             if ( prices[i] > max[i] ) {
                 max[i] = prices[i];
             }
