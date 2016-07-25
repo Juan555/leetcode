@@ -5,9 +5,9 @@ public class Solution {
         max[max.length - 1] = prices[prices.length - 1];
         for ( int i = max.length - 1; i > 0; --i ) {
             if ( prices[i] > max[i] ) {
-                max[i] = prices[i];
+                max[i-1] = prices[i];
             }
-            else { max[i] = max[i + 1];}
+            else { max[i-1] = max[i];}
         }
         int result = 0;
         for ( int i = 0; i < prices.length - 1; ++i ) {
