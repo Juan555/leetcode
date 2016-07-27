@@ -7,7 +7,7 @@ public class Solution {
             for ( int j = i + 1; j < length - 1; ++j ) {
                 for ( int k =  j + 1; k < length; ++k ) {
                     if ( nums[k] == -( nums[i] + nums[j] ) ) {
-                        List element = result.add(Arrays.asList(nums[i], nums[j], nums[k]));
+                        List element = Arrays.asList(nums[i], nums[j], nums[k]);
                         if ( result.size() != 0 && result[result.size() - 1] == element ) {
                             continue;
                         }
