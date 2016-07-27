@@ -47,5 +47,6 @@ public class Solution {
             }
             else{continue;}
         }
+        return result;
     }
 }
