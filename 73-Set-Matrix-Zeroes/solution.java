@@ -1,5 +1,5 @@
 public class Solution {
-    public void setZeroes(int[][] matrix) {
+    public void setZeroes(int[][] matrix) {//totally ignore the first column, set it using boolean, and add 0 using boolean
         boolean first_column = false;
         int row = matrix.length;
         int column = matrix[0].length;
