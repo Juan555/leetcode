@@ -40,9 +40,12 @@ public class Solution {
                         high--;
                     }
                     else if ( nums[high] + nums[low] + nums[i] > 0 ) {
+                        while ( low < high && nums[high] == nums[high - 1] ) {high --;}
                         high--;
                     }
-                    else { low++;}
+                    else { 
+                        while ( low < high && nums[low] == nums[low + 1] ) {low++;}
+                        low++;}
                 }
             }
             else{continue;}
