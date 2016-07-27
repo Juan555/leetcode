@@ -26,7 +26,7 @@ public class Solution {
         //skip the duplicate first element
         //skip duplicate second and third element
         Arrays.sort(nums);
-        List<List<Integer>> result = ArrayList<List<Integer>>();
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
         for (int i = 0; i < nums.length - 2; ++i ) {
             if ( i == 0 || (i > 0 && nums[i] != nums[i - 1])){
                 int low = i + 1;
