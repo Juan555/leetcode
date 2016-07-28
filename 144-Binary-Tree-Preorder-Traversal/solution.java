@@ -26,7 +26,7 @@ public class Solution {
     Stack<TreeNode> stack = new Stack<>();
     List<Integer> result = new ArrayList<Integer>();
     if ( root == null ) { return result; }
-    result.push ( root );
+    stack.push ( root );
     while ( !result.isEmpty ) {
         TreeNode curr = stack.pop();
         result.add ( curr.val );
