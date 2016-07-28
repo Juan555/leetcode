@@ -9,17 +9,31 @@
  */
 public class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
-        List<Integer> result = new ArrayList<Integer>();
-        if ( root == null ) {return result;}
-        helper( root, result );
-        return result;
+        // 1st solution
+    //     List<Integer> result = new ArrayList<Integer>();
+    //     if ( root == null ) {return result;}
+    //     helper( root, result );
+    //     return result;
+    // }
+    // public void helper( TreeNode root, List<Integer> result ){
+    //     if ( root == null ) return;
+    //     else {
+    //         result.add(root.val);
+    //         helper( root.left, result );
+    //         helper( root.right, result );
+    //     }
+    
+    Stack<Integer> stack = new Stack<>();
+    List<Integer> result = new ArrayList<Integer>();
+    if ( root == null ) { return result; }
+    result.push ( root.val );
+    while ( !result.isEmpty ) {
+        TreeNode curr = stack.pop();
+        result.add ( curr.val );
+        if ( root.right != null ) { stack.pus ( root.right.val ); }
+        if ( root.left != null ) { stack.push ( root.left.val );}
+        
     }
-    public void helper( TreeNode root, List<Integer> result ){
-        if ( root == null ) return;
-        else {
-            result.add(root.val);
-            helper( root.left, result );
-            helper( root.right, result );
-        }
+    return result;
     }
 }
