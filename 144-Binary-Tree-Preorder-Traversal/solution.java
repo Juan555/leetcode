@@ -30,8 +30,8 @@ public class Solution {
     while ( !result.isEmpty ) {
         TreeNode curr = stack.pop();
         result.add ( curr.val );
-        if ( root.right != null ) { stack.push ( root.right.val ); }
-        if ( root.left != null ) { stack.push ( root.left.val );}
+        if ( root.right != null ) { stack.push ( root.right ); }
+        if ( root.left != null ) { stack.push ( root.left );}
         
     }
     return result;
