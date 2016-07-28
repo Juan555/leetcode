@@ -25,8 +25,7 @@ public class Solution {
     
     Stack<TreeNode> stack = new Stack<>();
     List<Integer> result = new ArrayList<>();
-    if ( root == null ) { return result; }
-    else{
+    if ( root != null ) { 
     stack.push ( root );
     while ( !stack.isEmpty() ) {
         TreeNode curr = stack.pop();
@@ -35,7 +34,8 @@ public class Solution {
         if ( root.left != null ) { stack.push ( curr.left );}
         
     }
-    return result;}
+    }
+    return result;
     }
     // Stack<TreeNode> stack = new Stack<>();
     //     List<Integer> traversal = new ArrayList<>();
