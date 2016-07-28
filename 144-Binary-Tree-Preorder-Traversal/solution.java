@@ -14,11 +14,12 @@ public class Solution {
         return helper( root, result );
     }
     public List<Integer> helper( TreeNode root, List<Integer> result ){
-        if ( root == null ) return;
+        if ( root == null ) return 0;
         else {
             result.add(root.val);
-            helper( root.left.val );
-            helper( root.right.val );
+            int left = helper( root.left );
+            int right = helper( root.right );
+            return result;
         }
     }
 }
