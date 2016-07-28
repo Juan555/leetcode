@@ -17,8 +17,8 @@ public class Solution {
         if ( root == null ) return 0;
         else {
             result.add(root.val);
-            int left = helper( root.left );
-            int right = helper( root.right );
+            int left = helper( root.left, result );
+            int right = helper( root.right, result );
             return result;
         }
     }
