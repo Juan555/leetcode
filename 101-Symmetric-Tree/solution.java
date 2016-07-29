@@ -23,7 +23,13 @@ public class Solution {
         return true;
     }
     public void helper( TreeNode root, List<List<Integer>> result, int height ) {
-        if ( root == null ) { result.get(height).add(0); }
+        if ( root == null ) { 
+            if ( height >= result.size() ) {
+                result.add( new ArrayList<Integer>() );
+            }
+            result.get(height).add(0); 
+            return;
+        }
         if ( height >= result.size() ) {
             result.add( new ArrayList<Integer>() );
         }
