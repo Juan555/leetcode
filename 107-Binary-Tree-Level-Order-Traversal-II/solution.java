@@ -19,7 +19,7 @@ public class Solution {
         if ( height >= result.size() ) {
             result.add(0, new ArrayList<Integer>() );
         }
-        result.get(height).add( root );
+        result.get(height).add( root.val );
         helper ( root, result, height + 1);
         helper ( root, result, height + 1);
     }
