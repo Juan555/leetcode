@@ -29,7 +29,7 @@ public class Solution {
         //     result.add(comp);
         // }
         // return result;
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        List<List<Integer>> result = new ArrayList<List<Integer>>();//居然就这样过了，而去是一遍头，我也是跪了。。。
         if ( root == null ) {return result;}
         helper ( root, result, 0, true );
         return result;
