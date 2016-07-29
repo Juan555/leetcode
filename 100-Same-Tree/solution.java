@@ -20,13 +20,13 @@ public class Solution {
                 TreeNode for_p = p_stack.pop();
                 TreeNode for_q = q_stack.pop();
                 if ( for_p.val != for_q.val ) { return false; }
-                if ( p.left != null && q.left != null) {
-                    p_stack.push(p.left);
-                    q_stack.push(q.left);
+                if ( for_p.left != null && for_q.left != null) {
+                    p_stack.push(for_p.left);
+                    q_stack.push(for_q.left);
                 }
-                if ( q.right != null && p.right != null ) {
-                    p_stack.push(p.right);
-                    q_stack.push(q.right);
+                if ( for_q.right != null && for_p.right != null ) {
+                    p_stack.push(for_p.right);
+                    q_stack.push(for_q.right);
                 }
             }
             if ( p_stack != null || q_stack != null ) {return false;}
