@@ -15,7 +15,7 @@ public class Solution {
         for ( int i = 0; i < result.size(); ++i ) {
             int length = result.get(i).size();
             for ( int j = 0; j < length/2; ++j ) {
-                if ( result.get(i).get(j) != result.get(i).get(length - j) ){
+                if ( result.get(i).get(j) != result.get(i).get(length - j -1) ){
                     return false;
                 }
             }
@@ -23,7 +23,7 @@ public class Solution {
         return true;
     }
     public void helper( TreeNode root, List<List<Integer>> result, int height ) {
-        if ( root == null ) { return; }
+        if ( root == null ) { result.get(height).add(0); }
         if ( height >= result.size() ) {
             result.add( new ArrayList<Integer>() );
         }
