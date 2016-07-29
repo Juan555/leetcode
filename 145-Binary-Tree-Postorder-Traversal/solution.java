@@ -18,6 +18,6 @@ public class Solution {
         if ( root == null ) {return;}
         helper ( root.left, result );
         helper ( root.right, result );
-        result.add( root );
+        result.add( root.val );
     }
 }
