@@ -23,6 +23,8 @@ public class Solution {
     //         helper( root.right, result );
     //     }
     
+    
+    //2nd solution
     Stack<TreeNode> stack = new Stack<>();
     List<Integer> result = new ArrayList<>();
     if ( root == null ) { return result; }
