@@ -21,7 +21,7 @@ public class Solution {
             result.add(new ArrayList<Integer>() );
         }
         result.get(height).add( root.val );
-        helper ( root, result, height + 1);
-        helper ( root, result, height + 1);
+        helper ( root.left, result, height + 1);
+        helper ( root.right, result, height + 1);
     }
 }
