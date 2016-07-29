@@ -12,12 +12,13 @@ public class Solution {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         if ( root == null ) { return result; }
         helper ( root, result, 0 );
+        Collections.reverse(result);
         return result;
     }
     public void helper( TreeNode root, List<List<Integer>> result, int height ) {
         if ( root == null ) { return; }
         if ( height >= result.size() ) {
-            result.add(0, new ArrayList<Integer>() );
+            result.add(new ArrayList<Integer>() );
         }
         result.get(height).add( root.val );
         helper ( root, result, height + 1);
