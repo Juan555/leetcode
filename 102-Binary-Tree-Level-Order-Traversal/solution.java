@@ -17,7 +17,7 @@ public class Solution {
     public void helper( TreeNode root, List<List<Integer>> result, int height ) {
         if ( root == null ) { return; }
         if ( height >= result.size() ) { result.add( new ArrayList<Integer>() ); }
-        result.get(height).add(root);
+        result.get(height).add(root.val);
         helper( root.left, result, height + 1);
         helper( root.right, result, height + 1);
     }
