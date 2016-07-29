@@ -10,7 +10,7 @@
 public class Solution {
     public boolean isSameTree(TreeNode p, TreeNode q) {
         if ( p == null && q == null ) {return true;}
-        else if ( p = null || q == null ) { return false;}
+        else if ( p == null || q == null ) { return false;}
         else {
             Stack<Integer> p_stack = new Stack<>();
             Stack<Integer> q_stack = new Stack<>();
