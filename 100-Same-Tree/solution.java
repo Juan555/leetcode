@@ -19,7 +19,7 @@ public class Solution {
             while ( p_stack != null && q_stack != null ) {
                 TreeNode for_p = p_stack.pop();
                 TreeNode for_q = q_stack.pop();
-                if ( for_p.value != for_q.val ) { return false; }
+                if ( for_p.val != for_q.val ) { return false; }
                 if ( p.left != null && q.left != null) {
                     p_stack.push(p.left);
                     q_stack.push(q.left);
