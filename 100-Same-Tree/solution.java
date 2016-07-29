@@ -12,8 +12,8 @@ public class Solution {
         if ( p == null && q == null ) {return true;}
         else if ( p == null || q == null ) { return false;}
         else {
-            Stack<Integer> p_stack = new Stack<>();
-            Stack<Integer> q_stack = new Stack<>();
+            Stack<TreeNode> p_stack = new Stack<>();
+            Stack<TreeNode> q_stack = new Stack<>();
             p_stack.push( p );
             q_stack.push( q );
             while ( p_stack != null && q_stack != null ) {
