@@ -16,7 +16,7 @@ public class Solution {
             Stack<TreeNode> q_stack = new Stack<>();
             p_stack.push( p );
             q_stack.push( q );
-            while ( p_stack != null && q_stack != null ) {
+            while ( !p_stack.isEmpty() && !q_stack.isEmpty() ) {
                 TreeNode for_p = p_stack.pop();
                 TreeNode for_q = q_stack.pop();
                 if ( for_p.val != for_q.val ) { return false; }
@@ -29,7 +29,7 @@ public class Solution {
                     q_stack.push(for_q.right);
                 }
             }
-            if ( p_stack != null || q_stack != null ) {return false;}
+            if ( !p_stack.isEmpty() || !q_stack.isEmpty ) {return false;}
             return true;
         }
     }
