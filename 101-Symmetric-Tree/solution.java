@@ -13,10 +13,11 @@ public class Solution {
         return helper ( root.left, root.right );}
     public boolean helper ( TreeNode left, TreeNode right ) {
         if ( left == null && right == null ) {return true;}
-        if ( left == null ^ right == null ) { return false;}
-        if ( left == right ) {
+        if ( left == null || right == null ) { return false;}
+        if ( left.val == right.val ) {
             return helper ( left.left, right.right ) && helper ( left.right, right.left );
         }
+        else { return false; }
     }
         
         //我知道这个方法很烂。。。但是反正过了哈哈哈
