@@ -11,6 +11,7 @@ public class Solution {
     public void flatten(TreeNode root) {
         //Moris Traversal
         TreeNode now = root;
+        if ( root == null ) { return; }
         while ( now.left != null ) {
             TreeNode curr = now.left;
             while ( curr.right != null ) {
