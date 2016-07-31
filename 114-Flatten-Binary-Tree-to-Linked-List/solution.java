@@ -20,8 +20,9 @@ public class Solution {
                 curr.right = now.right;
                 now.right = now.left;
                 now.left = null;
-                now = now.right;
+                
             }
+            now = now.right;
             
         }
     }
