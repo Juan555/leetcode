@@ -18,8 +18,8 @@ public class Solution {
                 curr = curr.right;
                 }
                 curr.right = now.right;
-                curr.right = curr.left;
-                curr.left = null;
+                now.right = now.left;
+                now.left = null;
                 now = now.right;
             }
             
