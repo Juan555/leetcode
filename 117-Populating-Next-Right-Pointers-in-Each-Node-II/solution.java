@@ -8,9 +8,9 @@
  */
 public class Solution {
     public void connect(TreeLinkNode root) {
-        TreeNode curr = root;
-        TreeNode prev = null;
-        TreeNode head = null;
+        TreeLinkNode curr = root;
+        TreeLinkNode prev = null;
+        TreeLinkNode head = null;
         while ( curr != null ) { // check the end of level
             while ( curr != null ) {//check if it's end of each level
              if ( curr.left != null ) {
