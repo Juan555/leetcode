@@ -1,6 +1,6 @@
 public class Solution {
     public boolean isValid(String s) {
-        Stack <char> stack = new Stack<>();
+        Stack <char> stack = new Stack<char>();
         for ( int i = 0; i < s.length(); ++i ) {
             char element = s.charAt(i);
             if ( stack.isEmpty() ) {
