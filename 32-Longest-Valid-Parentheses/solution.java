@@ -9,7 +9,7 @@ public class Solution {
          }
          else {
              if ( !stack.isEmpty() ) {
-                 if (s[stack.peek()] == '(') {
+                 if (s.charAt(stack.peek()) == '(') {
                      stack.pop();
                  }
                  else { stack.push(i); }
@@ -26,7 +26,7 @@ public class Solution {
          max = Math.max( max, end - start - 1);
          end = start;
      }
-     max = Math.max( max, end - 1);
+     max = Math.max( max, end);
      return max;
     }
 }
