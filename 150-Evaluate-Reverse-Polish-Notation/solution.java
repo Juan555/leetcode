@@ -2,7 +2,7 @@ public class Solution {
     public int evalRPN(String[] tokens) {
         int result = 0;
         Stack<Integer> stack = new Stack<>();
-        if ( tokens == null || !String.toInteger(tokens[0]).isDigit ) { return 0; }//???
+        if ( tokens == null || !tokens[0]).isNumetric() ) { return 0; }//???
         for ( int i = 0; i < tokens.length; ++i ) {
             String element = tokens[i];
             if ( element.isNumetric() ) {
