@@ -10,7 +10,7 @@ public class Solution {
                 else if ( i == "*" ) { stack.push( a * b ); }
                 else { stack.push ( a / b ); }
             }
-            else { stack.push( Integer.parseInt(i) ); }
+            else { stack.add( Integer.parseInt(i) ); }
         }
         return stack.pop();
     }
