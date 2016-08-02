@@ -5,9 +5,9 @@ public class Solution {
         for ( int i = 0; i < total_number; ++i ) {
             List<Integer> set = new ArrayList<>();
             for ( int j = 0; j < nums.length; ++j ) {
-                if ((i & (1<<j)) != 0) { set.insert(nums[j]);}
+                if ((i & (1<<j)) != 0) { set.add(nums[j]);}
             }
-            result.insert(set);
+            result.add(set);
         }
         return result;
     }
