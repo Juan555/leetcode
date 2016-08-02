@@ -5,9 +5,9 @@ public class Solution {
             if ( i.equals("+") || i.equals("-") || i.equals("*") || i.equals("/") ) {
                 int b = stack.pop();
                 int a = stack.pop();
-                if ( i == "+" ) { stack.push( a + b ); }
-                else if ( i == "-" ) { stack.push( a - b ); }
-                else if ( i == "*" ) { stack.push( a * b ); }
+                if ( i.equals("+") ) { stack.push( a + b ); }
+                else if ( i.equals("-") ) { stack.push( a - b ); }
+                else if ( i.equals("*") ) { stack.push( a * b ); }
                 else { stack.push ( a / b ); }
             }
             else { stack.push( Integer.parseInt(i) ); }
