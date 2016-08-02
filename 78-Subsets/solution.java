@@ -5,7 +5,7 @@ public class Solution {
         for ( int i = 0; i < total_number; ++i ) {
             List<Integer> set = new ArrayList<>();
             for ( int j = 0; j < nums.length; ++j ) {
-                if (( i >> j )&1) { set.insert(nums[j]);}
+                if (( i >> j )&1 == 1) { set.insert(nums[j]);}
             }
             result.insert(set);
         }
