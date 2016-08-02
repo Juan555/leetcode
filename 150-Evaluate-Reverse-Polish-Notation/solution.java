@@ -1,29 +1,17 @@
 public class Solution {
     public int evalRPN(String[] tokens) {
-        int result = 0;
         Stack<Integer> stack = new Stack<>();
-        if ( tokens == null || !tokens[0]).isNumetric() ) { return 0; }//???
-        for ( int i = 0; i < tokens.length; ++i ) {
-            String element = tokens[i];
-            if ( element.isNumetric() ) {
-                stack.push( element );
+        for ( String i: tokens ) {
+            if ( i == "+" || i == "-" || i == "*" || i == "/" ) {
+                int b = stack.pop();
+                int a = stack.pop();
+                if ( i == "+" ) { stack.push( a + b ); }
+                else if ( i == "-" ) { stack.push( a - b ); }
+                else if ( i == "*" ) { stack.push( a * b ); }
+                else { stack.push ( a / b ); }
             }
-            if ( element == "+" || element == "-" || element == "*" || element == "/" ) {
-                if ( !stack.isEmpty() ) {
-                    int first = stack.pop();
-                    if ( !stack.isEmpty() ) {
-                        int second = stack.pop();
-                    }
-                    else { return result; }
-                }
-                else { return result; }
-                if ( element == "+" ) { result = first + second;}
-                else if ( element == "-" ) {result = first - second;}
-                else if ( element == "*" ) {result = first * second; }
-                else { result = first / second; }
-                stack.push ( result );
-            }
+            else { stack.push( Integer.parseInt(i) ); }
         }
-        return result;
+        return stack.pop();
     }
 }
