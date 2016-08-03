@@ -1,6 +1,6 @@
 public class Solution {
     public List<List<Integer>> subsetsWithDup(int[] nums) {
-        List<List<Integer>> result = new List<List<Integer>>();
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
         int total_number = 1<<nums.length;
         for (int i = 0; i < total_number; ++i ) {
             List<Integer> subset = new List<Integer>();
