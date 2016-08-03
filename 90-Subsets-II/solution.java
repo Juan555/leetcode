@@ -5,7 +5,7 @@ public class Solution {
         for (int i = 0; i < total_number; ++i ) {
             List<Integer> subset = new ArrayList<Integer>();
             for ( int j = 0; j < nums.length; ++j ) {
-                if (( i>>j ) & 1 == 1) { subset.add(nums[j]); }
+                if (1&( i>>j )  == 1) { subset.add(nums[j]); }
             }
             if ( !result.contains(subset) ) { result.add(subset); }
         }
