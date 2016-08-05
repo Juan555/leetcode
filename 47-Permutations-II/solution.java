@@ -16,6 +16,9 @@ public class Solution {
         for ( int i = 0; i <= template.size(); ++i ) {
             List<Integer> copy = new ArrayList<Integer>(template);
             copy.add(i, nums[index]);
+            if (copy.size() >= 2 && copy.get(i + 1) == nums[index] ) {
+                continue;
+            }
             back_tracking( result, nums, copy, index + 1);
         }
     }
