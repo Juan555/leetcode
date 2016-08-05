@@ -1,6 +1,6 @@
 public class Solution {
     public List<List<Integer>> permuteUnique(int[] nums) {
-        List<List<Integer>> result = new Arraylist<List<Integer>>();
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
         Arrays.sort(nums);
         if ( nums == null || nums.length == 0 ) { return result; }
         List<Integer> template = new ArrayList<Integer>();
