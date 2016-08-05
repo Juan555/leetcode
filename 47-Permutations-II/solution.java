@@ -8,8 +8,9 @@ public class Solution {
         return result;
     }
     public void back_tracking ( List<List<Integer>> result, int[] nums, List<Integer> template, int index ){
-        if ( template.size() == nums.length && !result.contains(template) ) {
-            result.add( template );
+        if ( template.size() == nums.length ) {
+            if (!result.contains(template)) {
+            result.add( template );}
             return;
         }
         for ( int i = 0; i <= template.size(); ++i ) {
