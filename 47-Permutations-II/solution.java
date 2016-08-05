@@ -15,7 +15,7 @@ public class Solution {
         }
         for ( int i = 0; i <= template.size(); ++i ) {
             List<Integer> copy = new ArrayList<Integer>(template);
-            template.add(i, nums[index]);
+            copy.add(i, nums[index]);
             back_tracking( result, nums, copy, index + 1);
         }
     }
