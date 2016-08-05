@@ -1,7 +1,7 @@
 public class Solution {
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
-        if ( nums == null || nums.size() == 0 ) { return result; }
+        if ( nums == null || nums.length == 0 ) { return result; }
         List<Integer> template = new ArrayList<Integer>();
         back_tracking( result, nums, template, 0 );
         return result;
