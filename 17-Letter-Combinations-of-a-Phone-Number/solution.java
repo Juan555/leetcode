@@ -1,6 +1,6 @@
 
 public class Solution {
-    public List<String> letterCombinations(String digits) {
+    public List<String> letterCombinations(String digits) {//need better solution
         HashMap<Character, String> map = new HashMap<Character, String>();
         map.put('2', "abc");
         map.put('3', "def");
