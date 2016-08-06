@@ -11,16 +11,17 @@ public class Solution {
         map.put('9', "wxyz");
         List<String> result = new ArrayList<>();
         String element = new String();
-        back_tracking( result, digits, 0 );
+        back_tracking( result, digits, map, 0 );
     }
-    public void back_tracking( List<String> result, String digits, String element, int index ) {
+    public void back_tracking( List<String> result, String digits, String element, HashMap map, int index ) {
         if ( element.length() == digits.length() ) {
             result.add(element);
             return;
         }
         for ( int i = 0; i < digits.length(); ++i ) {
             char c = digits.charAt(i);
-            element += c;
+            String s = map.get(c);
+            element += s;
             back_tracking( result, digits, element, index + 1);   
         }
     }
