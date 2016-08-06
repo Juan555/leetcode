@@ -18,14 +18,15 @@ public class Solution {
     }
     public void back_tracking( List<String> result, String digits, String element, HashMap map, int index ) {
         if ( element.length() == digits.length() ) {
-            result.add(new String(element));
+            if (!result.contains(element)) {
+            result.add(new String(element));}
             return;
         }
-        for ( int i = 0; i < digits.length(); ++i ) {
+        for ( int i = index; i < digits.length(); ++i ) {
             char c = digits.charAt(index);
             String s = (String)map.get(c);
             for ( int j = 0; j < s.length(); ++j ){
-                element += s.charAt(i);
+                element += s.charAt(j);
                 back_tracking( result, digits, element, map, index + 1);  
                 element = element.substring(0, element.length() - 1 );
             }
