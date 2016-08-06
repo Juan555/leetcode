@@ -7,7 +7,7 @@ public class Solution {
             return result;
         }
         if ( result * result > x ){
-            result = 
+            result = result/2;
         }
         else {
             result = 3*result/2;
