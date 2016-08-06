@@ -15,8 +15,8 @@ public class Solution {
         x = 1.0/x;
         n = -n;
     }
-    double result = x;
-    for ( int i = 2; i <= n; ++i ) {
+    double result = 1.0;
+    for ( int i = 1; i <= n; ++i ) {
         result *= x;
     }
     return result;
