@@ -24,9 +24,13 @@ public class Solution {
         for ( int i = 0; i < digits.length(); ++i ) {
             char c = digits.charAt(index);
             String s = (String)map.get(c);
-            element += s.charAt(i);
-            back_tracking( result, digits, element, map, index + 1);  
-            element = element.substring(0, element.length() - 1 );
+            for ( int j = 0; j < s.length(); ++j ){
+                element += s.charAt(i);
+                back_tracking( result, digits, element, map, index + 1);  
+                element = element.substring(0, element.length() - 1 );
+            }
+            
+            
         }
     }
 }
