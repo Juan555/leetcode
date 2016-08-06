@@ -24,7 +24,7 @@ public class Solution {
             String s = (String)map.get(c);
             element += s;
             back_tracking( result, digits, element, map, index + 1);  
-            element -= s;
+            element = element - s;
         }
     }
 }
