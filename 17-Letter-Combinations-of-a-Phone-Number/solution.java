@@ -26,7 +26,7 @@ public class Solution {
             String s = (String)map.get(c);
             element += s.charAt(i);
             back_tracking( result, digits, element, map, index + 1);  
-            element = element.substring(0, string.length() - 1 );
+            element = element.substring(0, element.length() - 1 );
         }
     }
 }
