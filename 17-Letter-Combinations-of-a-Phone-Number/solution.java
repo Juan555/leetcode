@@ -11,7 +11,7 @@ public class Solution {
         map.put('9', "wxyz");
         List<String> result = new ArrayList<>();
         String element = new String();
-        back_tracking( result, digits, map, 0 );
+        back_tracking( result, digits, element, map, 0 );
     }
     public void back_tracking( List<String> result, String digits, String element, HashMap map, int index ) {
         if ( element.length() == digits.length() ) {
