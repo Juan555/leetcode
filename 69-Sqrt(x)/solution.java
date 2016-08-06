@@ -1,16 +1,15 @@
 public class Solution {
     public int mySqrt(int x) {
-        return helper( x, x/2 );
+        if(x <= 1) return x;
+    int left = 1, right = x;
+    while(left < right) {
+        int mid = left + (right - left) / 2;
+        if(mid <= x / mid) {
+            left = mid;
+        } else {
+            right = mid;
+        }
     }
-    public int helper( int x, int result ){
-        if ( (result * result <= x) && ((result + 1) * (result + 1) > x)) {
-            return result;
-        }
-        if ( result * result > x ){
-            result = result/2;
-        }
-        else {
-            result = 3*result/2;
-        }
+    return left;
     }
 }
