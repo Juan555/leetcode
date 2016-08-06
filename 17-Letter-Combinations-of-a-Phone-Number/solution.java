@@ -21,7 +21,7 @@ public class Solution {
         }
         for ( int i = 0; i < digits.length(); ++i ) {
             char c = digits.charAt(i);
-            String s = map.get(c);
+            String s = (String)map.get(c);
             element += s;
             back_tracking( result, digits, element, map, index + 1);  
             element -= s;
