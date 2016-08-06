@@ -1,3 +1,4 @@
+import 
 public class Solution {
     public List<String> letterCombinations(String digits) {
         HashMap<Character, String> map = new HashMap<Character, String>();
@@ -15,14 +16,15 @@ public class Solution {
     }
     public void back_tracking( List<String> result, String digits, String element, HashMap map, int index ) {
         if ( element.length() == digits.length() ) {
-            result.add(element);
+            result.add(new String(element));
             return;
         }
         for ( int i = 0; i < digits.length(); ++i ) {
             char c = digits.charAt(i);
             String s = map.get(c);
             element += s;
-            back_tracking( result, digits, element, map, index + 1);   
+            back_tracking( result, digits, element, map, index + 1);  
+            element -= s;
         }
     }
 }
