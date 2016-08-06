@@ -1,6 +1,6 @@
 public class Solution {
     public List<String> letterCombinations(String digits) {
-        Map<Integer, String> map = new HashMap<>();
+        Map<Character, String> map = new HashMap<>();
         map.put('2', "abc");
         map.put('3', "def");
         map.put('4', "ghi");
@@ -22,7 +22,7 @@ public class Solution {
             char c = digits.charAt(i);
             String s = map.get(c);
             element += s;
-            back_tracking( result, digits, element, index + 1);   
+            back_tracking( result, digits, element, map, index + 1);   
         }
     }
 }
