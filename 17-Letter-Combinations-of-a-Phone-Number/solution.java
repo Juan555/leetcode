@@ -26,12 +26,8 @@ public class Solution {
             char c = digits.charAt(index);
             String s = (String)map.get(c);
             for ( int j = 0; j < s.length(); ++j ){
-                element += s.charAt(j);
-                back_tracking( result, digits, element, map, index + 1);  
-                element = element.substring(0, element.length() - 1 );
+                back_tracking( result, digits, element + s.charAt(j), map, index + 1);  
             }
-            
-            
         }
     }
 }
