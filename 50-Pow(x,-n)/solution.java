@@ -1,14 +1,13 @@
 public class Solution {
     public double myPow(double x, int n) { // Time Limit Exceeded 
-        return pow(x, n);
+        return power( x, n );
     }
-    
-    private double pow(double x, long n) {
-        if (n == 0) return 1;
-        if (n == 1) return x;
-        if (n < 0) return 1 / pow(x, 0 - n);
-        if (n % 2 == 0) return pow(x * x, n / 2);
-        else return pow(x * x, n / 2) * x;
+    public double power ( double x, long n ) {
+        if ( n == 0 ) {return 1;}
+        if ( n < 0 ) { 
+            return 1.0/power( x, -n );
+        double v = power ( x, n/2 );
+        return (n%2==1? (v * v * x) : (v * v));
     
     // if ( n == 0 ) { return 1;} Time limit
     // if ( n < 0 ) {
