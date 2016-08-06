@@ -7,11 +7,11 @@ public class Solution {
     while(left < right) {
         int mid = (left + right) / 2;
         if(mid <= x / mid) {
-            left = mid;
+            left = mid-1;
         } else {
             right = mid;
         }
     }
-    return left;
+    return left-1;
     }
 }
