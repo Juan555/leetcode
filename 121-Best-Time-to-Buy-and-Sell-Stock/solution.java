@@ -17,11 +17,20 @@ public class Solution {
         //     }
         // }
         // return result;
+        
+        //Time exceeded
+        // int result = 0;
+        // for ( int i = 0; i < prices.length-1; ++i ) {
+        //     for ( int j = i; j < prices.length; ++j ) {
+        //         result = Math.max ( result, prices[j] - prices[i] );
+        //     }
+        // }
+        // return result;
         int result = 0;
-        for ( int i = 0; i < prices.length-1; ++i ) {
-            for ( int j = i; j < prices.length; ++j ) {
-                result = Math.max ( result, prices[j] - prices[i] );
-            }
+        int min = prices[0];
+        for ( int i = 1; i < prices.length; ++i ) {
+            result = Math.max( result, prices[i] - min );
+            min = Math.min( min, prices[i] );
         }
         return result;
     }
