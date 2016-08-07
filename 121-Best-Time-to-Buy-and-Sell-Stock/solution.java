@@ -27,7 +27,7 @@ public class Solution {
         // }
         // return result;
         int result = 0;
-        if ( prices == null ||prices.length == 0 ) {return result;}
+        if ( prices.length < 2 ) {return result;}
         int min = prices[0];
         for ( int i = 1; i < prices.length; ++i ) {
             result = Math.max( result, prices[i] - min );
