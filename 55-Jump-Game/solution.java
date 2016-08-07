@@ -50,6 +50,6 @@ public class Solution {
             max = Math.max( max, i + nums[i]);
             if ( i >= max ) {return false;}
         }
-        return true;
+        return true;//这也可以？？？
     }
 }
