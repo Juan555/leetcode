@@ -1,12 +1,11 @@
 public class Solution {
     public boolean canJump(int[] nums) {
-        if ( nums.length ==1 ) {return true;}
-        for ( int i = 0; i < nums.length; ) {
-            if ( i + nums[i] == (nums.length-1) ) {return true;}
-            else if ( i + nums[i] >=nums.length) { return true;}
-            else if (nums[i] == 0) {return false;}
-            else { i = i + nums[i]-1; }
+        //make sure you understand the question
+        if ( nums == null || nums.length == 1 ) {return true;}
+        int max = 0;
+        for ( int i = 0; i <= max && max < nums.length - 1; ++i ) {
+            max = Math.max( max, nums[i]+i);
         }
-        return false;
+        return max >= nums.length-1;
     }
 }
