@@ -7,7 +7,6 @@ public class Solution {
         for (int i = 0; i < s.length(); ++i ) {
             String element = "" + s.charAt(i);
             if (!last_substring.contains(element) ) {
-                map.put( element, i);
                 last_substring += element;
                 result = Math.max ( result, last_substring.length() );
             }
@@ -15,8 +14,8 @@ public class Solution {
                 int diff = i - map.get(element);
                 result = Math.max ( result, diff );
                 last_substring = s.substring(map.get(element),i);
-                map.put(element, i);
             }
+            map.put(element, i);
         }
         return result;
     }
