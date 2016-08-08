@@ -1,5 +1,5 @@
 public class Solution {
-    public int maxSubArray(int[] nums) {
+    public int maxSubArray(int[] nums) {//potential bug
         if ( nums == null || nums.length == 0 ) {return 0;}
         int max = nums[0];
         int curr_max = max;
