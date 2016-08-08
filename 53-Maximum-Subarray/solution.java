@@ -11,6 +11,6 @@ public class Solution {
             }
             total_sum = Math.max(total_sum, max);
         }
-        return total_sum
+        return total_sum;
     }
 }
