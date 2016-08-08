@@ -1,13 +1,10 @@
 public class Solution {
     public int minimumTotal(List<List<Integer>> triangle) {
-        int min = MAX_VALUE;
         int max = 0;
-        for ( int i = 0; i < triangle.size(); ++i ) {
-            for ( int j = 0; j < triangle.get(i).size(); ++j ) {
-                min = Math.min( triangle.get(i).get(j), min ); 
+        for ( int i = triangle.size() - 2; i >= 0; --i ){
+            for ( int j = 0; j < triangle.get(i).size() - 1; ++j ){
+                triangle[i][j] = Math.min( triangle.get(i+1).get(j), triangle.get(i+1).get(j+1) ) + triangle[i][j];
             }
-            max += min;
-            min = MAX_VALUE;
         }
         return max;
     }
