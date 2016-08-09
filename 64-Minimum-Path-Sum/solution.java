@@ -13,7 +13,7 @@ public class Solution {
                     grid[i][j] = grid[i + 1][j];
                 }
                 else {
-                    grid[i][j] = grid[i + 1][j + 1];
+                    grid[i][j] = Math.min(grid[i][j + 1], grid[i + 1][j]);
                 }
             }
         }
