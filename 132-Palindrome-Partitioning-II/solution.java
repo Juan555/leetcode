@@ -12,7 +12,7 @@ public class Solution {
         for ( int i: cut ) { cut[i] = length - i - 1;} //max cut for each cell
         for ( int i = length - 1; i >= 0; --i ) {
             for ( int j = i; j < length; ++j ) {
-                if ( s.get(i) == s.get(j) && (j - i < 2 || judge[i + 1][j - 1]) ){
+                if ( s[i] == s[j] && (j - i < 2 || judge[i + 1][j - 1]) ){
                     judge[i][j] = true;
                     cut[i] = Math.min( cut[i], cut[i + 1] + 1);
                 }
