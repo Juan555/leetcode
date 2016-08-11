@@ -37,6 +37,7 @@ public class Solution {
         
         int [] result = new int[s.length() + 1];
         if ( s == null || s.length() == 0 ) { return 0;}
+        //if ( s.length() == 1 ) {return 1;}
         result[s.length()] = 1;
         result[s.length()-1] = (s.charAt(s.length() - 1) == '0') ? 0:1;
         for ( int i = s.length() - 2; i >= 0; --i ){
