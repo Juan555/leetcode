@@ -1,6 +1,6 @@
 public class Solution {
     public int numDecodings(String s) {
-        int [] s_array = s.toCharArray();
+        char [] s_array = s.toCharArray();
         int [] result = new int[s.length];
         if ( s.length() == 0 ) { return 0;}
         if ( s.length() == 1 ) { return 1;}
