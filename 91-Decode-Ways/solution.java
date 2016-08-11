@@ -5,9 +5,11 @@ public class Solution {
         if ( s.length() == 0 ) { return 0;}
         if ( s.length() == 1 ) { return 1;}
         if ( s.length() == 2 ) {
-            if ( s[0] == 1 ||(s[0] == 2 && s[1] <= 6 ) ) {return 2}
+            if ( s[0] == 1 ||(s[0] == 2 && s[1] <= 6 ) ) {return 2;}
             else { return 1; }
         }
+        if ( s[0] == 1 ||(s[0] == 2 && s[1] <= 6 ) ) { record[1] = 2; }
+        else { record[1] = 1;}
         for ( int i = 2; i < s.length(); ++i ){
             if ( s[i - 1] == 2 ) {
                 if ( s[i] > 6 ) { record[i] = record[i - 1];}
