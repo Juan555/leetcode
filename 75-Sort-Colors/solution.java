@@ -20,17 +20,14 @@ public class Solution {
             {
                 int temp = nums[i];
             nums[i] = nums[j];
-            nums[j] = temp;
-            j++;
+            nums[j++] = temp;
             }
             
         else if (nums[i] == 2)
             {
                 int second_temp = nums[i];
-            nums[i] = nums[k];
-            nums[k] = second_temp;
-                k--;
-                i--;
+            nums[i--] = nums[k];
+            nums[k--] = second_temp;
             }
         }
     }
