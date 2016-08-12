@@ -55,18 +55,16 @@ public class Solution {
                 for (int i = col_end; i >= col_begin; --i ){
                     result.add(matrix[row_end][i]);
                 }
-                
+               row_end--; 
             }
-            row_end--;
             
             //going up
             if ( col_begin <= col_end ) {
             for ( int i = row_end; i >= row_begin; --i ) {
                 result.add(matrix[i][col_begin]);
             }
-            
-            }
             col_begin ++;
+            }
         }
         return result;
     }
