@@ -17,17 +17,21 @@ public class Solution {
         int j = 0, k = nums.length-1;
         for (int i=0; i <= k; i++) {
         if (nums[i] == 0)
-            {j++;
+            {
                 int temp = nums[i];
             nums[i] = nums[j];
-            nums[j] = temp;}
+            nums[j] = temp;
+            j++;
+            }
             
         else if (nums[i] == 2)
-            {i--;
-            k--;
+            {
                 int second_temp = nums[i];
             nums[i] = nums[k];
-            nums[k] = nums[i];}
+            nums[k] = second_temp;
+                k--;
+                i--;
+            }
         }
     }
 }
