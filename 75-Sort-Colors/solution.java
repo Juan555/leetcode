@@ -14,7 +14,7 @@ public class Solution {
         //     else {nums[i] = 2;}
         // }
         // return;
-        int j = 0, k = n-1;
+        int j = 0, k = nums.length-1;
         for (int i=0; i <= k; i++) {
         if (A[i] == 0)
             {swap(A[i], A[j++]);}
