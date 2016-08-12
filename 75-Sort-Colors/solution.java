@@ -16,12 +16,12 @@ public class Solution {
         // return;
         int j = 0, k = nums.length-1;
         for (int i=0; i <= k; i++) {
-        if (nums[i] == 0)｛
+        if (nums[i] == 0){
             int temp = nums[i];
             nums[i] = nums[j];
             nums[j++] = temp;
             }
-        else if (nums[i] == 2) ｛
+        else if (nums[i] == 2) {
             int second_temp = nums[i];
             nums[i--] = nums[k];
             nums[k--] = second_temp;
