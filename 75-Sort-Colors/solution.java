@@ -6,7 +6,7 @@ public class Solution {
         for ( int i = 0; i < nums.length; ++i ){
             if ( nums[i] == 0 ) {red ++;}
             else if ( nums[i] == 1 ) {white++;}
-            else{blue++}
+            else{blue++;}
         }
         for ( int i = 0; i < nums.length; ++i ) {
             if ( i <= red - 1 ) {nums[i] = 0;}
