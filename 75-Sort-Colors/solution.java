@@ -16,10 +16,10 @@ public class Solution {
         // return;
         int j = 0, k = nums.length-1;
         for (int i=0; i <= k; i++) {
-        if (A[i] == 0)
-            {swap(A[i], A[j++]);}
-        else if (A[i] == 2)
-            {swap(A[i--], A[k--]);}
+        if (nums[i] == 0)
+            {swap(nums[i], nums[j++]);}
+        else if (nums[i] == 2)
+            {swap(nums[i--], nums[k--]);}
         }
     }
 }
