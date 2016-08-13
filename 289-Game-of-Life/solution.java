@@ -19,12 +19,8 @@ public class Solution {
                     if ( i + 1 < board.length ) { sum += result[i + 1][j + 1];}
                 }
                 if ( i - 1 >= 0 ) { sum += result[i - 1][j];
-                    if ( j - 1 >= 0 ) { sum += result[i - 1][j - 1];}
-                    if ( j + 1 < board[0].length ) {sum += result[i - 1][j + 1];}
                 }
-                if ( i + 1 < board.length ) { sum += result[1 + 1][j];
-                    if ( j - 1 >= 0 ) { sum += result[i + 1][j - 1];}
-                    if ( j + 1 < board[0].length ) {sum += result[i + 1][j + 1];}
+                if ( i + 1 < board.length ) { sum += result[i + 1][j];
                 }
                 if ( sum < 2 ) { board[i][j] = 0;}
                 else if ( sum == 3 ) {board[i][j] = 1;}
