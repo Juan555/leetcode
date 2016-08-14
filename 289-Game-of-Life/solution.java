@@ -48,7 +48,7 @@ public class Solution {
         int sum = 0;
         for ( int row = Math.max(i - 1, 0); row <= Math.min(i+1, height-1); row++ ){
             for ( int col = Math.max(j - 1, 0); col <= Math.min(j+1, width-1); col++ ){
-                sum += board[i][j]&1;
+                sum += board[row][col]&1;
             }
         }
         return sum;
