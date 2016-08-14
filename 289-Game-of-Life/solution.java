@@ -35,7 +35,7 @@ public class Solution {
             for ( int j = 0; j < board[0].length; ++i ) {
               int sum = check_result( board, i, j, width, height); 
               if (board[i][j] == 0 &&  sum == 3) {board[i][j] = 2;}
-              if ( board[i][j] == 1 && (sum <2 || sum >3) {board[i][j] = 1;}
+              if ( board[i][j] == 1 && (sum <2 || sum >3)) {board[i][j] = 1;}
             }
         }
         for ( int i = 0; i < board.length; ++i ) {
