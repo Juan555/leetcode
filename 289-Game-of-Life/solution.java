@@ -32,10 +32,10 @@ public class Solution {
         int width = board[0].length;
         int height = board.length;
         for ( int i = 0; i < board.length; ++i ) {
-            for ( int j = 0; j < board[0].length; ++i ) {
+            for ( int j = 0; j < board[0].length; ++j ) {
               int sum = check_result( board, i, j, width, height); 
               if (board[i][j] == 0 &&  sum == 3) {board[i][j] = 2;}
-              if ( board[i][j] == 1 && (sum <2 || sum >3)) {board[i][j] = 1;}
+              if ( board[i][j] == 1 && (sum == 2 || sum == 3)) {board[i][j] = 3;}
             }
         }
         for ( int i = 0; i < board.length; ++i ) {
@@ -43,6 +43,7 @@ public class Solution {
               board[i][j] >>= 1;
             }
         }
+        return;
     }
     public int check_result( int[][] board, int i, int j, int width, int height ) {
         int sum = 0;
@@ -51,6 +52,7 @@ public class Solution {
                 sum += board[row][col]&1;
             }
         }
+        sum -= board[i][j]&1;
         return sum;
     }
 }
