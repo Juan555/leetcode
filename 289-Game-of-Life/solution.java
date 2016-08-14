@@ -46,8 +46,8 @@ public class Solution {
     }
     public int check_result( int[][] board, int i, int j, int width, int height ) {
         int sum = 0;
-        for ( int row = Math.max(i - 1, 0); row <= Math.min(i+1, height-1); i++ ){
-            for ( int col = Math.max(j - 1, 0); col <= Math.min(j+1, width-1); j++ ){
+        for ( int row = Math.max(i - 1, 0); row <= Math.min(i+1, height-1); row++ ){
+            for ( int col = Math.max(j - 1, 0); col <= Math.min(j+1, width-1); col++ ){
                 sum += board[i][j]&1;
             }
         }
