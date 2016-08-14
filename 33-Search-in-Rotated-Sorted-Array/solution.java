@@ -17,7 +17,7 @@ public class Solution {
                    right = mid - 1;
                }
            }
-           else if ( nums[mid] > nums[left] ) {
+           if ( nums[mid] > nums[left] ) {
                if ( target >= nums[left] && target < nums[mid] ) {
                    right = mid - 1;
                }
