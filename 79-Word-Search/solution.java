@@ -21,7 +21,7 @@ public class Solution {
             return true;
         }
         //check out of boundry or already visited
-        if ( visited[i][j] || i < 0 || j < 0 || i >= board.length || j >= board[0].length || board[i][j] != word.charAt(index) ) {
+        if ( i < 0 || j < 0 || i >= board.length || j >= board[0].length || visited[i][j] || board[i][j] != word.charAt(index) ) {
             return false;
         }
         //recursive back-tracking case
