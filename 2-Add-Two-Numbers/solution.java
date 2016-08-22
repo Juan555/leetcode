@@ -16,7 +16,11 @@ public class Solution {
         int sum = 0;
         while ( l1 != null || l2 != null ) {
             sum = l1.val + l2.val + update;
-            update = sum%10;
+            update = sum/10;
+            traverse.next = new ListNode(sum%10);
+            traverse = traverse.next;
+            l1 = (l1 == null)?null:l1.next;
+            l2 = (l2 == null)?null:l2.next;
         }
         if ( update == 1 ) {
             
