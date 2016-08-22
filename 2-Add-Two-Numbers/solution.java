@@ -23,7 +23,7 @@ public class Solution {
             l2 = (l2 == null)?null:l2.next;
         }
         if ( update == 1 ) {
-            
+            traverse.next = new ListNode(1);
         }
         return dummy_result.next;
         // int update = 0;
