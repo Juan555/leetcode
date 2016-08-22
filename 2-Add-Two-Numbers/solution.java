@@ -7,7 +7,7 @@
  * }
  */
 public class Solution {
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {//pay attention to the type(list instead of set)
         int update = 0;
         if ( l1.val + l2.val > 9 ) {
             ListNode result = new ListNode( (l1.val+l2.val)%10 );
