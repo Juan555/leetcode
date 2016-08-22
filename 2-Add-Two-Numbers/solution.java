@@ -18,7 +18,7 @@ public class Solution {
         while ( l1 != null || l2 != null ) {
             if ( l1 == null ) {
                 if ( l2.val + update > 9 ) {
-                    result.insert(0);
+                    result.insert(new ListNode(0) );
                 }
                 else { 
                     result.insert(new ListNode(l2.val+update));
@@ -28,7 +28,7 @@ public class Solution {
             }
             else if ( l2 == null ){
                 if ( l1.val + update > 9 ) {
-                    result.insert(0);
+                    result.insert(new ListNode(0));
                 }
                 else { 
                     result.insert(new ListNode( l1.val+update ));
