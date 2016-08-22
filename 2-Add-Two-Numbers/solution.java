@@ -9,7 +9,12 @@
 public class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         int update = 0;
-        ListNode result = new ListNode();
+        if ( l1.val + l2.val > 9 ) {
+            ListNode result = new ListNode( (l1.val+l2.val)%10 );
+            update = 1;
+        }
+        else { ListNode result = new ListNode(l1.val + l2.val);}
+        
         while ( l1.val != null || l2.val != null ) {
             if ( l1 == null ) {
                 if ( l2.val + update > 9 ) {
