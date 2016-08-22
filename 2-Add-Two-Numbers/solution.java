@@ -14,24 +14,25 @@ public class Solution {
             update = 1;
         }
         else { ListNode result = new ListNode(l1.val + l2.val);}
+        ListNode head = result;
         
         while ( l1 != null || l2 != null ) {
             if ( l1 == null ) {
                 if ( l2.val + update > 9 ) {
-                    result.insert(new ListNode(0) );
+                    result.next = new ListNode(0);
                 }
                 else { 
-                    result.insert(new ListNode(l2.val+update));
+                    result.next = new ListNode(l2.val+update);
                     update = 0;
                 }
                 l2 = l2.next;
             }
             else if ( l2 == null ){
                 if ( l1.val + update > 9 ) {
-                    result.insert(new ListNode(0));
+                    result.next = new ListNode(0);
                 }
                 else { 
-                    result.insert(new ListNode( l1.val+update ));
+                    result.next = new ListNode( l1.val+update );
                     update = 0;
                 }
                 l1 = l1.next;
@@ -39,18 +40,19 @@ public class Solution {
             else{
                 int sum = l1.val + l2.val + update;
                 if ( sum > 9 ) {
-                    result.insert(new ListNode(sum%10));
+                    result.next = new ListNode(sum%10);
                     update = 1;
                 }
                 else {
-                    result.insert(new ListNode(sum));
+                    result.next = new ListNode(sum);
                     update = 0;
                 }
                 l1 = l1.next;
                 l2 = l2.next;
+                result = result.next;
             }
         }
-        if ( update == 1 ) { result.insert(new ListNode(1)); }
-        return result;
+        if ( update == 1 ) { result.next = new ListNode(1); }
+        return head;
     }
 }
