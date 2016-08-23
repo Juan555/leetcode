@@ -14,7 +14,7 @@ public class Solution {
         if ( curr.next == null ){
             return curr;
         }
-        ListNode head = reverse_helper( new_head, curr.next );
+        ListNode head = reverse_helper( curr.next );
         curr.next.next == curr;
         return head;
     }
