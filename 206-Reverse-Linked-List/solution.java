@@ -16,8 +16,8 @@ public class Solution {
             head = curr;
             return curr;
         }
-        ListNode next = reverse_helper( curr.next );
-        next.next = curr;
+        ListNode after = reverse_helper( curr.next );
+        after.next = curr;
         return curr;
     }
 }
