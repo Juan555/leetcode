@@ -8,16 +8,14 @@
  */
 public class Solution {
     public ListNode reverseList(ListNode head) {
-        ListNode new_head = new ListNode(-1);
-        return reverse_helper(new_head, head).next;
+        return reverse_helper(head);
     }
-    public ListNode reverse_helper( ListNode new_head, ListNode curr ){
-        if ( curr == null || curr.next == null ){
-            new_head.next = curr;
+    public ListNode reverse_helper( ListNode curr ){
+        if ( curr.next == null ){
             return curr;
         }
-        reverse_helper( new_head, curr.next );
-        curr.next = curr;
-        return new_head;
+        ListNode head = reverse_helper( new_head, curr.next );
+        curr.next.next == curr;
+        return head;
     }
 }
