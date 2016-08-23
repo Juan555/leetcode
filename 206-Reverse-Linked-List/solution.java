@@ -8,16 +8,29 @@
  */
 public class Solution {
     public ListNode reverseList(ListNode head) {
-        if ( head == null ) {return head;}
-        return reverse_helper(head);
+        //recursive one
+    //     if ( head == null ) {return head;}
+    //     return reverse_helper(head);
+    // }
+    // public ListNode reverse_helper( ListNode curr ){
+    //     if ( curr.next == null ){
+    //         return curr;
+    //     }
+    //     ListNode head = reverse_helper( curr.next );
+    //     curr.next.next = curr;
+    //     curr.next = null;
+    //     return head;
+    
+    //iterative one
+    ListNode prev = null;
+    ListNode temp = null;
+    ListNode curr = head;
+    while (curr) {
+        temp = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = temp;
     }
-    public ListNode reverse_helper( ListNode curr ){
-        if ( curr.next == null ){
-            return curr;
-        }
-        ListNode head = reverse_helper( curr.next );
-        curr.next.next = curr;
-        curr.next = null;
-        return head;
+    return prev;
     }
 }
