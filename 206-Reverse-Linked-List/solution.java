@@ -25,7 +25,7 @@ public class Solution {
     ListNode prev = null;
     ListNode temp = null;
     ListNode curr = head;
-    while (curr) {
+    while (curr != null) {
         temp = curr.next;
         curr.next = prev;
         prev = curr;
