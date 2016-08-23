@@ -8,7 +8,7 @@
  */
 public class Solution {
     public ListNode reverseList(ListNode head) {
-        ListNode tail = reverse_helper(ListNode head);
+        ListNode tail = reverse_helper(head);
         return head;
     }
     public ListNode reverse_helper( ListNode curr ){
