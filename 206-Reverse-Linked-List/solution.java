@@ -8,6 +8,7 @@
  */
 public class Solution {
     public ListNode reverseList(ListNode head) {
+        if ( head == null ) {return head;}
         return reverse_helper(head);
     }
     public ListNode reverse_helper( ListNode curr ){
@@ -16,6 +17,7 @@ public class Solution {
         }
         ListNode head = reverse_helper( curr.next );
         curr.next.next = curr;
+        curr.next = null;
         return head;
     }
 }
