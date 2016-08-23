@@ -15,7 +15,7 @@ public class Solution {
             return curr;
         }
         ListNode head = reverse_helper( curr.next );
-        curr.next.next == curr;
+        curr.next.next = curr;
         return head;
     }
 }
