@@ -34,7 +34,7 @@ public class Solution {
         copy_head.next = head.next;
         RandomListNode orig_curr = head;
         RandomListNode curr = copy_head;
-        while( orig_curr != null ){
+        while( curr.next != null ){
             orig_curr.next = curr.next;
             curr.next = orig_curr.next.next;
             
