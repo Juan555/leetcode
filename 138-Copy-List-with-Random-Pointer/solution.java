@@ -41,6 +41,7 @@ public class Solution {
             orig_curr = orig_curr.next;
             curr = curr.next;
         }
+        orig_curr.next = null;
         return copy_head.next;
         // if ( head == null ) {
         //     RandomListNode null_copy = null;
