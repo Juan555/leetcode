@@ -11,7 +11,7 @@ public class Solution {
         }
         //check digit and overflow
         int result = 0;
-        for ( i = 0; i < str.length(); ++i ) {
+        for ( int i = 0; i < str.length(); ++i ) {
             //skip the first sign
             if ( str.charAt(0) == '+' || str.charAt(0) == '-' ) {continue;}
             //check if it's valid digit
