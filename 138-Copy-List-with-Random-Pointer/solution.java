@@ -24,10 +24,18 @@ public class Solution {
         orig_curr = head;
         curr = new_head;
         while( orig_curr.next != null ){
+            if ( orig_curr.random == null ) {
+                curr.random = null;
+            }
+            else{
             RandomListNode old_temp = head;
             RandomListNode new_temp = new_head;
             while ( old_temp.next != null ) {
-                if ( orig_curr.random == old_temp.random ){
+                if ( old_temp.random == null ){
+                    old_temp = old_temp.next;
+                    new_temp = new_temp.next;
+                }
+                else if ( orig_curr.random == old_temp.random ){
                     curr.random = new_temp;
                     break;
                 }
@@ -36,6 +44,7 @@ public class Solution {
                     new_temp = new_temp.next;
                 }
                 
+            }
             }
             orig_curr = orig_curr.next;
             curr = curr.next;
