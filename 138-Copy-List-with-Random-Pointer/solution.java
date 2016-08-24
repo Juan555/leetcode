@@ -15,7 +15,7 @@ public class Solution {
         RandomListNode curr = new RandomListNode(head.label);
         RandomListNode new_head = curr;
         RandomListNode orig_curr = head;
-        while ( orig_curr.next != null ) {
+        while ( orig_curr != null ) {
             curr.next = new RandomListNode(orig_curr.next.label);
             orig_curr = orig_curr.next;
             curr = curr.next;
@@ -23,7 +23,10 @@ public class Solution {
         curr.next = null;
         orig_curr = head;
         curr = new_head;
-        while( orig_curr.next != null ){
+        if ( head.random == head ) {
+            new_head.random = new_head;
+        }
+        while( orig_curr != null ){
             if ( orig_curr.random == null ) {
                 curr.random = null;
             }
