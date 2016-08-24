@@ -4,7 +4,7 @@ public class Solution {
         HashMap<String,List<String>> map = new HashMap<String,List<String>>();
         for ( int i = 0; i < strs.length; ++i ) {
             char[] ca = strs[i].toCharArray();
-            String.sort(ca);
+            Array.sort(ca);
             String key = String.valueOf(ca);
             if ( !map.containsKey(key) ) {
                 map.put(key, new ArrayList<String>() );
