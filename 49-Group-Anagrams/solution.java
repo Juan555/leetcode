@@ -6,10 +6,10 @@ public class Solution {
             char[] ca = strs[i].toCharArray();
             String.sort(ca);
             String key = String.valueOf(ca);
-            if ( map.containsKey(key) ) {
-                map.get(key).add(strs[i]);
+            if ( !map.containsKey(key) ) {
+                map.put(key, new ArrayList<String>() );
             }
-            else{map.put(key, strs[i]);}
+            map.get(key).add(strs[i]);
         }
         return new ArrayList<List<String>>(map.values() );
         
