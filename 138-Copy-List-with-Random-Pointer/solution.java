@@ -31,11 +31,7 @@ public class Solution {
             RandomListNode old_temp = head;
             RandomListNode new_temp = new_head;
             while ( old_temp.next != null ) {
-                if ( old_temp.random == null ){
-                    old_temp = old_temp.next;
-                    new_temp = new_temp.next;
-                }
-                else if ( orig_curr.random == old_temp.random ){
+                if ( orig_curr.random == old_temp ){
                     curr.random = new_temp;
                     break;
                 }
