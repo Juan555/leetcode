@@ -16,7 +16,7 @@ public class Solution {
             if ( str.charAt(0) == '+' || str.charAt(0) == '-' ) {continue;}
             //check if it's valid digit
             int digit = '9' - str.charAt(i);
-            if ( digit > 9 ) || ( digit < 0 ) { break; }
+            if (( digit > 9 ) || ( digit < 0 )) { break; }
             if ( INT_MAX - digit < result ) {return INT_MAX;}
             else if ( INT_MIN + digit > result ) { return INT_MIN;}
             else{ result = result*10 + sign == 1?digit:digit*(-1);}
