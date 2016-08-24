@@ -33,7 +33,7 @@ public class Solution {
         RandomListNode copy_head = new RandomListNode(-1);
         copy_head.next = head.next;
         RandomListNode orig_curr = head;
-        RandomListNode curr = copy_head;
+        RandomListNode curr = copy_head.next;
         while( curr.next != null ){
             orig_curr.next = curr.next;
             curr.next = orig_curr.next.next;
