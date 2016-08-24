@@ -15,7 +15,7 @@ public class Solution {
         RandomListNode curr = new RandomListNode(head.label);
         RandomListNode new_head = curr;
         RandomListNode orig_curr = head;
-        while ( curr.next != null ) {
+        while ( orig.curr.next != null ) {
             curr.next = new RandomListNode(orig_curr.next.label);
             orig_curr = orig_curr.next;
             curr = curr.next;
