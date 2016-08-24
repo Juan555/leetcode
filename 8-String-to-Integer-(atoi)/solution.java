@@ -11,7 +11,7 @@ public class Solution {
             sign = str.charAt(0) == '+'?1:(-1);
             start++;
         }
-        //check digit and overflow
+        //check digit and overflow,store that in long
         long sum = 0;
         for ( int i = start; i < str.length(); ++i ) {
             if ( !Character.isDigit(str.charAt(i)) ) {break;}
