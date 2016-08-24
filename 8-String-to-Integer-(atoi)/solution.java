@@ -12,17 +12,13 @@ public class Solution {
             start++;
         }
         //check digit and overflow
-        int result = 0;
+        long result = 0;
         for ( int i = start; i < str.length(); ++i ) {
-            //skip the first sign
-            // if ( str.charAt(0) == '+' || str.charAt(0) == '-' ) {continue;}
-            //check if it's valid digit
-            int digit = str.charAt(i) - '0';
-            if (( digit > 9 ) || ( digit < 0 )) { break; }
-            if ( sign == 1 && Integer.MAX_VALUE - digit <= result*10 ) {return Integer.MAX_VALUE;}
-            else if ( sign == -1 && Integer.MIN_VALUE + digit >= result*10 ) { return Integer.MIN_VALUE ;}
-            else{ result = result*10 + (sign == 1?digit:digit*sign);}
+            if ( !Character.isDigit(str.charAt(i)) ) {break;}
+            sum = sum*10+(str.charAt(i) - '0');
+            if ( sign == 1 && sum > Integer.MAX_VALUE ) {return Integer.MAX_VALUE;}
+            if ( sign == -1 && sum < Integer.MIN_VALUE ){ return Integer.MIN_VALUE;}
         }
-        return result;
+        return (int)result*sign;
     }
 }
