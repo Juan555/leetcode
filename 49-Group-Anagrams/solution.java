@@ -1,6 +1,6 @@
 public class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
-        if ( strs == null || strs.length == 0 ) {return new List<List<String>>();}
+        if ( strs == null || strs.length == 0 ) {return new ArrayList<List<String>>();}
         HashMap<String,List<String>> map = new HashMap<String,List<String>>();
         for ( int i = 0; i < strs.length; ++i ) {
             char[] ca = strs[i].toCharArray();
@@ -11,7 +11,7 @@ public class Solution {
             }
             else{map.put(key, strs[i]);}
         }
-        return new List<List<String>>(map.values() );
+        return new ArrayList<List<String>>(map.values() );
         
     }
 }
