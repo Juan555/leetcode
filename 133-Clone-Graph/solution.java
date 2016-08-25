@@ -17,7 +17,7 @@ public class Solution {
     public void helper(UndirectedGraphNode node) {
         if ( node == null ) {return;}
         if ( map.containsKey(node.label) ) {
-            map.get(node.label).add(map.get(node.label));
+            map.get(node.label).neighbors.add(map.get(node.label));
         }
         else{UndirectedGraphNode new_one = new UndirectedGraphNode(node.label);
         map.put( node.label, new_one );}
