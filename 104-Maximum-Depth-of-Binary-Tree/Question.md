@@ -8,9 +8,9 @@ The maximum depth is the number of nodes along the longest path from the root no
 
 <div>
 
-[Subscribe](/subscribe/) to see which companies asked this question
+<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
-</div>
+<span class="hidebutton">[LinkedIn](/company/linkedin/) [Uber](/company/uber/) [Apple](/company/apple/) [Yahoo](/company/yahoo/)</span></div>
 
 <div>
 
