@@ -9,7 +9,7 @@
 public class Solution {
     public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
         HashMap<Integer, List<UndirectedGraphNode>> map = new HashMap<Integer, List<UndirectedGraphNode>>();
-        if ( node == null ) { return result;}
+        if ( node == null ) { return null;}
         UndirectedGraphNode result = new UndirectedGraphNode(node.label);
         map.put(node.label, result.neighbors);
         helper( node, result, map );
