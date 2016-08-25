@@ -7,7 +7,7 @@
  *     Interval(int s, int e) { start = s; end = e; }
  * }
  */
-public class Solution {
+public class Solution {//I cannot believe I solved a hard problem without any help..............................
     public List<Interval> merge(List<Interval> intervals) {
         List<Interval> result = new ArrayList<Interval> ();
         if ( intervals.size() == 0 ) return result;
