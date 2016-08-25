@@ -18,12 +18,12 @@ public class Solution {
     public void helper(UndirectedGraphNode node,UndirectedGraphNode last, HashMap<Integer, List<UndirectedGraphNode>> map){
         if ( node == null ) {return;}
         if ( map.containsKey(node.label) ){
-            map.get(node.label).insert(last);
+            map.get(node.label).add(last);
             node = node.next;}
         else { 
             UndirectedGraphNode new_one = new UndirectedGraphNode(node.label);
-            new_one.neighbors.insert(last);
-            last.neighbors.insert(new_one);
+            new_one.neighbors.add(last);
+            last.neighbors.add(new_one);
             map.put(node.label, new_one.neighbors);
             helper( node.next, new_one, map);
         }
