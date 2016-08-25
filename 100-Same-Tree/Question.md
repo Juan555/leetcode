@@ -8,12 +8,6 @@ Two binary trees are considered equal if they are structurally identical and the
 
 <div>
 
-[Subscribe](/subscribe/) to see which companies asked this question
-
-</div>
-
-<div>
-
 <div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
 <span class="hidebutton">[Bloomberg](/company/bloomberg/)</span></div>
