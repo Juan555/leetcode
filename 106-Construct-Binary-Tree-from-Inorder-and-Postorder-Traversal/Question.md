@@ -9,9 +9,9 @@ You may assume that duplicates do not exist in the tree.
 
 <div>
 
-[Subscribe](/subscribe/) to see which companies asked this question
+<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
-</div>
+<span class="hidebutton">[Microsoft](/company/microsoft/)</span></div>
 
 <div>
 
