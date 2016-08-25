@@ -6,9 +6,9 @@ Given a singly linked list where elements are sorted in ascending order, convert
 
 <div>
 
-[Subscribe](/subscribe/) to see which companies asked this question
+<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
-</div>
+<span class="hidebutton">[Zenefits](/company/zenefits/)</span></div>
 
 <div>
 
