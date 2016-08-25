@@ -8,12 +8,6 @@ The minimum depth is the number of nodes along the shortest path from the root n
 
 <div>
 
-[Subscribe](/subscribe/) to see which companies asked this question
-
-</div>
-
-<div>
-
 <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
 <span class="hidebutton">[Tree](/tag/tree/) [Depth-first Search](/tag/depth-first-search/) [Breadth-first Search](/tag/breadth-first-search/)</span></div>
