@@ -9,20 +9,18 @@
 public class Solution {
     HashMap<Integer, UndirectedGraphNode> map = new HashMap<Integer, UndirectedGraphNode>();
     public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
-        if ( node == null ) { return null; }
-        UndirectedGraphNode result = new UndirectedGraphNode(node.label);
-        helper( node);
-        return map.get(node.label);
+        return clone( node );
+    }
+    public UndirectedGraphNode clone( UndirectedGraphNode node ){
+        if ( node == null ) {return null;}
+        if ( map.containsKey(node.label) ){
+            return map.get(node.label);
         }
-    public void helper(UndirectedGraphNode node) {
-        if ( node == null ) {return;}
-        if ( map.containsKey(node.label) ) {
-            map.get(node.label).neighbors.add(map.get(node.label));
+        UndirectedGraphNode curr = new UndirectedGraphNode(node.label);
+        map.put(node.label, curr);
+        for ( UndirectedGraphNode orig: node.neighbors ) {
+            curr.neighbors.add(clone(orig) );
         }
-        else{UndirectedGraphNode new_one = new UndirectedGraphNode(node.label);
-        map.put( node.label, new_one );}
-        for (UndirectedGraphNode curr: node.neighbors) {
-            helper(curr);
-        }
+        return curr;
     }
 }
