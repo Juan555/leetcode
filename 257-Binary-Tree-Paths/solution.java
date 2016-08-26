@@ -9,7 +9,7 @@
  */
 public class Solution {
     public List<String> binaryTreePaths(TreeNode root) {
-        List<String> result = new List<String>();
+        List<String> result = new ArrayList<String>();
         return helper( root, result, "");
     }
     public List<String> helper(TreeNode curr, List<String> result, String element){
