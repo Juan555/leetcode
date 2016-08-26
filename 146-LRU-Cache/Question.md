@@ -9,9 +9,9 @@ Design and implement a data structure for Least Recently Used (LRU) cache. It sh
 
 <div>
 
-[Subscribe](/subscribe/) to see which companies asked this question
+<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
-</div>
+<span class="hidebutton">[Google](/company/google/) [Uber](/company/uber/) [Facebook](/company/facebook/) [Twitter](/company/twitter/) [Zenefits](/company/zenefits/) [Amazon](/company/amazon/) [Microsoft](/company/microsoft/) [Snapchat](/company/snapchat/) [Yahoo](/company/yahoo/) [Bloomberg](/company/bloomberg/) [Palantir](/company/palantir/)</span></div>
 
 <div>
 
