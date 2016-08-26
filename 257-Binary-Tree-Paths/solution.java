@@ -10,9 +10,10 @@
 public class Solution {
     public List<String> binaryTreePaths(TreeNode root) {
         List<String> result = new ArrayList<String>();
-        return helper( root, result, "");
+        helper( root, result, "");
+        return result;
     }
-    public List<String> helper(TreeNode curr, List<String> result, String element){
+    public void helper(TreeNode curr, List<String> result, String element){
         if ( curr.left == null && curr.right == null ) {
             result.add( element + "->" + curr.val + "");
         }
@@ -22,6 +23,5 @@ public class Solution {
         if ( curr.right != null ) {
             helper( curr.right, result, element + "->" + curr.val + "");
         }
-        return result;
     }
 }
