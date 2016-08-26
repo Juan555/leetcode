@@ -26,15 +26,9 @@ For C programmers: Try to solve it _in-place_ in _O_(1) space.
 
 <div>
 
-[Subscribe](/subscribe/) to see which companies asked this question
-
-</div>
-
-<div>
-
 <div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
-<span class="hidebutton">[Apple](/company/apple/) [Bloomberg](/company/bloomberg/) [Microsoft](/company/microsoft/) [Snapchat](/company/snapchat/) [Yelp](/company/yelp/)</span></div>
+<span class="hidebutton">[Microsoft](/company/microsoft/) [Snapchat](/company/snapchat/) [Apple](/company/apple/) [Bloomberg](/company/bloomberg/) [Yelp](/company/yelp/)</span></div>
 
 <div>
 
