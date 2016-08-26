@@ -17,15 +17,9 @@ Although the above answer is in lexicographical order, your answer could be in a
 
 <div>
 
-[Subscribe](/subscribe/) to see which companies asked this question
-
-</div>
-
-<div>
-
 <div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
-<span class="hidebutton">[Amazon](/company/amazon/) [Dropbox](/company/dropbox/) [Facebook](/company/facebook/) [Google](/company/google/) [Uber](/company/uber/)</span></div>
+<span class="hidebutton">[Amazon](/company/amazon/) [Dropbox](/company/dropbox/) [Google](/company/google/) [Uber](/company/uber/) [Facebook](/company/facebook/)</span></div>
 
 <div>
 
