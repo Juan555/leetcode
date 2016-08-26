@@ -6,15 +6,9 @@ Given a string _S_, find the longest palindromic substring in _S_. You may assum
 
 <div>
 
-[Subscribe](/subscribe/) to see which companies asked this question
-
-</div>
-
-<div>
-
 <div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
-<span class="hidebutton">[Amazon](/company/amazon/) [Bloomberg](/company/bloomberg/) [Microsoft](/company/microsoft/)</span></div>
+<span class="hidebutton">[Amazon](/company/amazon/) [Microsoft](/company/microsoft/) [Bloomberg](/company/bloomberg/)</span></div>
 
 <div>
 
