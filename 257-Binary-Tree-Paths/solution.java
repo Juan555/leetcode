@@ -12,7 +12,7 @@ public class Solution {
         List<String> result = new List<String>();
         return helper( root, result, "");
     }
-    public helper(TreeNode curr, List<String> result, String element){
+    public List<String> helper(TreeNode curr, List<String> result, String element){
         if ( curr.left == null && curr.right == null ) {
             result.add( element + "->" + curr.val + "");
         }
