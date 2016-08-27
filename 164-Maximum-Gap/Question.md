@@ -15,12 +15,6 @@ Special thanks to [@porker2008](https://oj.leetcode.com/discuss/user/porker2008)
 
 <div>
 
-[Subscribe](/subscribe/) to see which companies asked this question
-
-</div>
-
-<div>
-
 <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
 <span class="hidebutton">[Sort](/tag/sort/)</span></div>
