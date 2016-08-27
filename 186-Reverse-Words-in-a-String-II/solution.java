@@ -1,16 +1,11 @@
 public class Solution {
-    public void reverseWords(char[] s) {
+    public void reverseWords(char[] s) {//我的妈啊，全是bug
         reverse_helper(s, 0, s.length-1);
         int left = 0;
-        int right = 0;
-        for ( int i = 0; i < s.length; ++i ) {
-            if ( i == s.length-1 || i == ' ' ) {
-                reverse_helper(s, left, right);
-                right = right + 2;
-                left = right;
-            }
-            else{
-                right++;
+        for ( int i = 0; i <= s.length; ++i ) {
+            if ( i == s.length || s[i] == ' ' ) {
+                reverse_helper(s, left, i-1);
+                left = i+1;
             }
         }
 //         for(int i = 0, j = 0;i <= s.length;i++){
