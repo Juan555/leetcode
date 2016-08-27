@@ -13,11 +13,7 @@ public class Solution {
         //         right++;
         //     }
         // }
-        for(int i = 0, j = 0;i <= s.length;i++){
-			if(i==s.length || s[i] == ' '){
-				reverse_helper(s,j,i-1);
-				j = i+1;
-			}
+
 		}
     }
     public void reverse_helper(char[]s, int left, int right){
