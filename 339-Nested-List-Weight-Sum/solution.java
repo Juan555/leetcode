@@ -17,12 +17,21 @@
  */
 public class Solution {
     public int depthSum(List<NestedInteger> nestedList) {
-        if ( nestedList.isInteger() ) {
-            return nestedList.getInteger();
+        int result = 0;
+        return helper( nestedList, result );
+    }
+    public int helper(List<NestedInteger> nestedList, int result) {
+        if (nestedList == null || nestedList.size() == 0 ){
+            return 0;
         }
-
-        for ( int i = 0; i < nestedList(); ++i ) {
-            int result += depthSum(nestedList.get(i) );
+        for ( int i = 0; i < nestedList.size(); ++i ){
+            NestedInteger element = nestedList.get(i);
+            if ( element.isInteger() ){
+                result += element.getInteger();
+            }
+            else {
+                return helper( element, result );
+            }
         }
         return result;
     }
