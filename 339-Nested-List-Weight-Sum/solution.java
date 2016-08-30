@@ -20,9 +20,7 @@ public class Solution {
         return helper( nestedList, 1 );
     }
     public int helper(List<NestedInteger> nestedList, int depth) {
-        if (nestedList == null || nestedList.size() == 0 ){
-            return 0;
-        }
+        if (nestedList == null || nestedList.size() == 0 ){ return 0;}
         int result = 0;
         for ( NestedInteger element: nestedList ){
             result += element.isInteger()? element.getInteger()*depth:helper( element.getList(), depth+1 );
