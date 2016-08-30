@@ -17,7 +17,6 @@
  */
 public class Solution {
     public int depthSum(List<NestedInteger> nestedList) {
-        int result = 0;
         return helper( nestedList, 1 );
     }
     public int helper(List<NestedInteger> nestedList, int depth) {
@@ -25,14 +24,8 @@ public class Solution {
             return 0;
         }
         int result = 0;
-        for ( int i = 0; i < nestedList.size(); ++i ){
-            NestedInteger element = nestedList.get(i);
-            if ( element.isInteger() ){
-                result += element.getInteger()*depth;
-            }
-            else {
-                result += helper( element.getList(), depth+1 );
-            }
+        for ( NestedInteger element: nestedList ){
+            result += element.isInteger()? element.getInteger()*depth:helper( element.getList(), depth+1 );
         }
         return result;
     }
