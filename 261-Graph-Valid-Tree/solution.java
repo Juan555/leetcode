@@ -1,7 +1,7 @@
 public class Solution {
     public boolean validTree(int n, int[][] edges) {
         int[] visited = new int[n];
-        List<List<Integer>> map = ArrayList<List<Integer>>();
+        List<List<Integer>> map = new ArrayList<List<Integer>>();
         for( int i = 0; i < n; ++i ) {
             map.add( new ArrayList<Integer>() );
         }
