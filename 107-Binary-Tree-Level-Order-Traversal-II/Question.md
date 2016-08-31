@@ -25,12 +25,6 @@ return its bottom-up level order traversal as:
 
 <div>
 
-[Subscribe](/subscribe/) to see which companies asked this question
-
-</div>
-
-<div>
-
 <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
 <span class="hidebutton">[Tree](/tag/tree/) [Breadth-first Search](/tag/breadth-first-search/)</span></div>
