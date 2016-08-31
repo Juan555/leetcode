@@ -25,9 +25,9 @@ return its level order traversal as:
 
 <div>
 
-[Subscribe](/subscribe/) to see which companies asked this question
+<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
-</div>
+<span class="hidebutton">[LinkedIn](/company/linkedin/) [Facebook](/company/facebook/) [Amazon](/company/amazon/) [Microsoft](/company/microsoft/) [Apple](/company/apple/) [Bloomberg](/company/bloomberg/)</span></div>
 
 <div>
 
