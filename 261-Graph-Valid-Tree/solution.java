@@ -38,7 +38,7 @@ public class Solution {
                 }
             }
         }
-        visited[vertex] = 2;
+
         return false;
     }
 }
