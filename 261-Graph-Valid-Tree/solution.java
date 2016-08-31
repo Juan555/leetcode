@@ -18,27 +18,28 @@ public class Solution {
         }
         return true;
     }
-    // public boolean helper(int prev, int curr, List<List<Integer>> map, int[] visited){
-    //     for ( Integer hello: map.get(curr) ) {
-    //         visited[curr] = 1;
-    //         if ( curr != prev ) {
-    //             if ( visited[hello] == 1) {return true;}
-    //             if (helper( curr, hello, map, visited )){return true;}
-    //         }
-    //     }
-    //     return false;
-    // }
-    private boolean helper(int pred, int vertex, List<List<Integer>> adjList, int[] visited) {
-        visited[vertex] = 1;  // current vertex is being visited
-        for (Integer succ: adjList.get(vertex)) {  // successors of current vertex
-            if (succ != pred) {  // exclude current vertex's predecessor
-                if (visited[succ] == 1) { return true; }  // back edge/loop detected!
-
-                    if (helper(vertex, succ, adjList, visited)) { return true; }
-
+    public boolean helper(int prev, int curr, List<List<Integer>> map, int[] visited){
+        visited[curr] = 1;
+        for ( Integer hello: map.get(curr) ) {
+            
+            if ( hello != prev ) {
+                if ( visited[hello] == 1) {return true;}
+                if (helper( curr, hello, map, visited )){return true;}
             }
         }
-
         return false;
     }
+    // private boolean helper(int pred, int vertex, List<List<Integer>> adjList, int[] visited) {
+    //     visited[vertex] = 1;  // current vertex is being visited
+    //     for (Integer succ: adjList.get(vertex)) {  // successors of current vertex
+    //         if (succ != pred) {  // exclude current vertex's predecessor
+    //             if (visited[succ] == 1) { return true; }  // back edge/loop detected!
+
+    //                 if (helper(vertex, succ, adjList, visited)) { return true; }
+
+    //         }
+    //     }
+
+    //     return false;
+    // }
 }
