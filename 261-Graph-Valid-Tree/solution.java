@@ -33,9 +33,9 @@ public class Solution {
         for (Integer succ: adjList.get(vertex)) {  // successors of current vertex
             if (succ != pred) {  // exclude current vertex's predecessor
                 if (visited[succ] == 1) { return true; }  // back edge/loop detected!
-                else{
+
                     if (helper(vertex, succ, adjList, visited)) { return true; }
-                }
+
             }
         }
 
