@@ -1,9 +1,12 @@
 public class Solution {
     public int[] plusOne(int[] digits) {
-        int update = 0;
-        for ( int i = digits.length - 1; i >= 0; ++i ) {
-            update = digits[i] == 9? 1:0;
-            digits[i] = digits[i] == 9? 0:(digits[i]+1);
+        int pre_sum = digits[digits.length-1] + 1;
+        digits[digits.length-1]= pre_sum%10;
+        int update = pre_sum/10;
+        for ( int i = digits.length - 2; i >= 0; --i ) {
+            int sum = digits[i]+update;
+            digits[i] = sum%10;
+            update = sum/10;
         }
         if ( update == 1 ) {
             int[] result = new int[digits.length+1];
