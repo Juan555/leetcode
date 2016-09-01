@@ -26,15 +26,9 @@ Test cases had been added to test the overflow behavior.
 
 <div>
 
-[Subscribe](/subscribe/) to see which companies asked this question
-
-</div>
-
-<div>
-
 <div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
-<span class="hidebutton">[Apple](/company/apple/) [Bloomberg](/company/bloomberg/)</span></div>
+<span class="hidebutton">[Bloomberg](/company/bloomberg/) [Apple](/company/apple/)</span></div>
 
 <div>
 
