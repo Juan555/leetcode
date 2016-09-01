@@ -8,9 +8,9 @@ The digits are stored such that the most significant digit is at the head of the
 
 <div>
 
-[Subscribe](/subscribe/) to see which companies asked this question
+<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
-</div>
+<span class="hidebutton">[Google](/company/google/)</span></div>
 
 <div>
 
