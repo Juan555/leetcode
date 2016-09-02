@@ -6,12 +6,6 @@ Sort a linked list in _O_(_n_ log _n_) time using constant space complexity.
 
 <div>
 
-[Subscribe](/subscribe/) to see which companies asked this question
-
-</div>
-
-<div>
-
 <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
 <span class="hidebutton">[Linked List](/tag/linked-list/) [Sort](/tag/sort/)</span></div>
