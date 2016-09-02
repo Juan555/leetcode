@@ -4,7 +4,7 @@ public class Solution {
         int first= x;
         int second = 0;
         int end = x;
-        while( x > 0 ) {
+        while( end > 0 ) {
             second = second * 10 + first%10;
             first /= 10;
             end /= 100;
